@@ -26,7 +26,7 @@ class Pessoa {
     imc = 0;
   }
 
-  void PessoaComArgumentos(String nome, int idade, String cpf){
+  void PessoaComArgumentos(String nome, int idade, String cpf) {
     this.nome = nome;
     this.idade = idade;
     this.cpf = cpf;
@@ -96,6 +96,4 @@ class Pessoa {
   }
 
   //acessores
-
-
 }
