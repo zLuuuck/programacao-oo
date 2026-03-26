@@ -17,3 +17,4 @@ void main(){
   print('\nCentralizado:');
   triangulo2.desenharCentralizado();
 }
+

@@ -1,47 +1,90 @@
 import 'dart:math';
 
 class Triangulo {
-  double lado1;
-  double lado2;
-  double lado3;
-  String char;
+  double _lado1;
+  double _lado2;
+  double _lado3;
+  String _char;
 
-  // Construtor com Parâmetro
-  Triangulo(this.lado1, this.lado2, this.lado3, this.char);
-
-  //Métodos
-  double calcularPerimetro() {
-    double perimetro = lado1 + lado2 + lado3;
-    return perimetro;
+  // Construtor
+  Triangulo(this._lado1, this._lado2, this._lado3, this._char) {
+    _validar();
   }
 
-  double calcularArea() {
-    double soma = calcularPerimetro() / 2;
-    double area = sqrt(soma * (soma - lado1) * (soma - lado2) * (soma - lado3));
-    return area;
-  }
+  // Validações
+  void _validar() {
+    if (_lado1 <= 0 || _lado2 <= 0 || _lado3 <= 0) {
+      throw Exception('Lados devem ser maiores que zero');
+    }
 
-  void desenharEsquerda() {
-    int altura = lado1.round();
+    if (!(_lado1 + _lado2 > _lado3 &&
+        _lado1 + _lado3 > _lado2 &&
+        _lado2 + _lado3 > _lado1)) {
+      throw Exception('Os lados não formam um triângulo válido');
+    }
 
-    for (int i = 1; i <= altura; i++) {
-      print(char * i);
+    if (_char.isEmpty || _char.length != 1) {
+      throw Exception('Caractere deve ter exatamente 1 símbolo');
     }
   }
 
-  // Desenho centralizado
+  // Getters
+  double get lado1 => _lado1;
+  double get lado2 => _lado2;
+  double get lado3 => _lado3;
+  String get char => _char;
+
+  // Setters
+  set lado1(double valor) {
+    _lado1 = valor;
+    _validar();
+  }
+
+  set lado2(double valor) {
+    _lado2 = valor;
+    _validar();
+  }
+
+  set lado3(double valor) {
+    _lado3 = valor;
+    _validar();
+  }
+
+  set char(String valor) {
+    _char = valor;
+    _validar();
+  }
+
+  // Métodos
+  double calcularPerimetro() {
+    return _lado1 + _lado2 + _lado3;
+  }
+
+  double calcularArea() {
+    double s = calcularPerimetro() / 2;
+    return sqrt(s * (s - _lado1) * (s - _lado2) * (s - _lado3));
+  }
+
+  void desenharEsquerda() {
+    int altura = _lado1.round();
+
+    for (int i = 1; i <= altura; i++) {
+      print(List.filled(i, _char).join());
+    }
+  }
+
   void desenharCentralizado() {
-    int altura = lado1.round();
+    int altura = _lado1.round();
 
     for (int i = 1; i <= altura; i++) {
       String espacos = ' ' * (altura - i);
-      String chars = char * (2 * i - 1);
+      String chars = List.filled(2 * i - 1, _char).join();
       print(espacos + chars);
     }
   }
 
   void exibirResumo() {
-    print('Lados: $lado1, $lado2, $lado3');
+    print('Lados: $_lado1, $_lado2, $_lado3');
     print('Perímetro: ${calcularPerimetro()}');
     print('Área: ${calcularArea()}');
   }
