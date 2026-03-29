@@ -1,5 +1,3 @@
-import 'dart:async';
-
 class Aluno {
   String nome;
   double _nota1;
