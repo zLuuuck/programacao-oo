@@ -5,7 +5,7 @@ class Produto {
   int quantidadeEstoque;
 
   Produto(this.codigo, this.nome, this.precoUni, this.quantidadeEstoque) {
-    if (codigo > 0) {
+    if (codigo < 0) {
       print("Código deve ser maior que 0.");
     }
     if (nome.isEmpty) {
