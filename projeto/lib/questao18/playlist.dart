@@ -7,7 +7,9 @@ class Playlist {
   Musica m3;
 
   Playlist(this.nome, this.m1, this.m2, this.m3) {
-    if (nome.isEmpty) nome = "Playlist";
+    if (nome.isEmpty) {
+      nome = "Playlist";
+    }
   }
 
   int calcularDuracaoTotal() {

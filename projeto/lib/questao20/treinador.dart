@@ -17,8 +17,12 @@ class Treinador {
   void pokemonMaisForte() {
     Pokemon maisForte = p1;
 
-    if (p2.nivel > maisForte.nivel) maisForte = p2;
-    if (p3.nivel > maisForte.nivel) maisForte = p3;
+    if (p2.nivel > maisForte.nivel) {
+      maisForte = p2;
+    }
+    if (p3.nivel > maisForte.nivel) {
+      maisForte = p3;
+    }
 
     print("Mais forte:");
     maisForte.exibir();

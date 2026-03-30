@@ -14,16 +14,26 @@ class Semaforo {
   }
 
   void _definirTempo() {
-    if (corAtual == "vermelho") tempoRestante = 5;
-    if (corAtual == "verde") tempoRestante = 4;
-    if (corAtual == "amarelo") tempoRestante = 2;
+    if (corAtual == "vermelho") {
+      tempoRestante = 5;
+    }
+    if (corAtual == "verde") {
+      tempoRestante = 4;
+    }
+    if (corAtual == "amarelo") {
+      tempoRestante = 2;
+    }
   }
 
   void trocarCor() {
-    if (corAtual == "vermelho") corAtual = "verde";
-    else if (corAtual == "verde") corAtual = "amarelo";
-    else corAtual = "vermelho";
-
+    if (corAtual == "vermelho"){
+      corAtual = "verde";
+    } else if (corAtual == "verde"){
+      corAtual = "amarelo";
+    } else {
+      corAtual = "vermelho";
+    }
+    
     _definirTempo();
   }
 
