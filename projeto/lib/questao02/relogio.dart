@@ -15,7 +15,7 @@ class Relogio {
     }
   }
 
-  void exibirHorario(){
+  void exibirHorario() {
     print("Hora: $hora:$minuto:$segundo");
   }
 }
