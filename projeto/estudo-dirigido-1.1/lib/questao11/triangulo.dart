@@ -14,17 +14,17 @@ class Triangulo {
   // Validações
   void _validar() {
     if (_lado1 <= 0 || _lado2 <= 0 || _lado3 <= 0) {
-      throw Exception('Lados devem ser maiores que zero');
+      print('Lados devem ser maiores que zero');
     }
 
     if (!(_lado1 + _lado2 > _lado3 &&
         _lado1 + _lado3 > _lado2 &&
         _lado2 + _lado3 > _lado1)) {
-      throw Exception('Os lados não formam um triângulo válido');
+      print('Os lados não formam um triângulo válido');
     }
 
     if (_char.isEmpty || _char.length != 1) {
-      throw Exception('Caractere deve ter exatamente 1 símbolo');
+      print('Caractere deve ter exatamente 1 símbolo');
     }
   }
 

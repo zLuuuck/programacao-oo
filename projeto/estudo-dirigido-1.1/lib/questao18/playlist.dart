@@ -25,8 +25,9 @@ class Playlist {
   }
 
   void tocarPlaylist() {
-    print("Tocando...");
+    print("\nTocando agora...\n");
     m1.exibir();
+    print("\nMúsicas na sequência:\n");
     m2.exibir();
     m3.exibir();
   }
