@@ -36,23 +36,23 @@ class Triangulo {
 
   // Setters
   set lado1(double valor) {
-    _lado1 = valor;
     _validar();
+    _lado1 = valor;
   }
 
   set lado2(double valor) {
-    _lado2 = valor;
     _validar();
+    _lado2 = valor;
   }
 
   set lado3(double valor) {
-    _lado3 = valor;
     _validar();
+    _lado3 = valor;
   }
 
   set char(String valor) {
-    _char = valor;
     _validar();
+    _char = valor;
   }
 
   // Métodos
