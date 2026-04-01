@@ -1,5 +1,5 @@
 import '../questao06/produto.dart';
-import './pedido.dart';
+import 'pedido.dart';
 
 void main() {
   Produto p1 = Produto(1, "Teclado", 100.0, 10);

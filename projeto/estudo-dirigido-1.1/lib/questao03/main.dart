@@ -1,4 +1,4 @@
-import './data.dart';
+import 'data.dart';
 
 void main() {
   var data1 = Data(15, 08, 2007);

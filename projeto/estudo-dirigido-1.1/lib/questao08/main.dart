@@ -1,4 +1,4 @@
-import './endereco.dart';
+import 'endereco.dart';
 
 void main() {
   var end1 = Endereco('rua 1', 1234, 'sei la', 'oh gloria', 'parana', '80000987');

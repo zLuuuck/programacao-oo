@@ -1,4 +1,4 @@
-import './produto.dart';
+import 'produto.dart';
 
 void main(){
   var produto1 = Produto(0001, 'PC', 5000, 10);

@@ -1,4 +1,4 @@
-import './quadrado.dart';
+import 'quadrado.dart';
 
 void main() {
   var q1 = Quadrado(3, '*');

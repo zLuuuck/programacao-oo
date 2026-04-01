@@ -1,4 +1,4 @@
-import './relogio.dart';
+import 'relogio.dart';
 
 void main() {
   var hora1 = Relogio(19, 24, 34);

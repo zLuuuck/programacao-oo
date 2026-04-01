@@ -1,4 +1,4 @@
-import './aluno.dart';
+import 'aluno.dart';
 
 void main() {
   var aluno1 = Aluno('Ana Silva', 8.5, 9.0);

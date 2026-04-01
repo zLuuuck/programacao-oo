@@ -1,4 +1,4 @@
-import './pessoa.dart';
+import 'pessoa.dart';
 
 void main()
 {
