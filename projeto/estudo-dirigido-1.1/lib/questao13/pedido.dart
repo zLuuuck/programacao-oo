@@ -17,22 +17,22 @@ class Pedido {
 
   //função para verificar se a quantidade do item pedido tem disponível no estoque
   bool verificaQuantidadeEmEstoque() {
-    if (quantidade <= produto.quantidadeEstoque) { //só deixa completar o pedido se estiver item no estoque
-      produto.quantidadeEstoque -= quantidade;
+    if (quantidade <= produto.qtdeEstoque) { //só deixa completar o pedido se estiver item no estoque
+      produto.qtdeEstoque -= quantidade;
       return true;
     }
     return false;
   }
 
   double calcularTotal() {
-    return quantidade * produto.precoUni;
+    return quantidade * produto.precoUnitario;
   }
 
   void exibirPedido() {
     print("========= PEDIDO =========");
     print("Número: $numero");
     print("Produto: ${produto.nome}");
-    print("Preço unitário: ${produto.precoUni}");
+    print("Preço unitário: ${produto.precoUnitario}");
     print("Quantidade: $quantidade");
     print("Total: ${calcularTotal()}");
     if(verificaQuantidadeEmEstoque()){

@@ -1,38 +1,79 @@
+import 'dart:io';
 class Produto {
-  int codigo;
+  int _codigo;
   String nome;
-  double precoUni;
-  int quantidadeEstoque;
+  double _precoUni;
+  int _quantidadeEstoque;
 
-  Produto(this.codigo, this.nome, this.precoUni, this.quantidadeEstoque) {
-    if (codigo < 0) {
+  Produto(this._codigo, this.nome, this._precoUni, this._quantidadeEstoque) {
+    if (_codigo < 0) {
       print("Código deve ser maior que 0.");
     }
     if (nome.isEmpty) {
       print("Nome não pode ser vazio.");
     }
-    if (precoUni < 0) {
+    if (_precoUni < 0) {
       print("Preço deve ser maior que 0.");
     }
-    if (quantidadeEstoque < 0) {
+    if (_quantidadeEstoque < 0) {
       print("Quantidade deve ser maior que 0.");
     }
   }
 
+//setters produto
+
+//Setter e getter do código
+  set codigoProduto(int codigo){
+    if (codigo.isNaN || codigo <= 0){
+      exit(1);
+    }
+
+    _codigo = codigo;
+  }
+
+  int get codigo => _codigo;
+
+
+//Setter e Getter do preço unitário
+
+  set precoUnitario(double preco){
+    if (preco.isNaN || preco <= 0){
+      exit(2);
+    }
+
+    _precoUni = preco;
+  }
+
+  double get precoUnitario => _precoUni;
+
+
+//Setter e getter da quantidade em estoque
+
+  set qtdeEstoque(int quantidade){
+    if (quantidade.isNaN || quantidade <= 0){
+      exit(2);
+    }
+
+    _quantidadeEstoque = quantidade;
+  }
+
+  int get qtdeEstoque => _quantidadeEstoque;
+
+
   double calcularDesconto() {
-    double total = precoUni * quantidadeEstoque;
+    double total = _precoUni * _quantidadeEstoque;
 
     // 20 ou mais unidades = 10%
-    if (quantidadeEstoque >= 20) {
+    if (_quantidadeEstoque >= 20) {
       return total * 0.15;
     }
 
     // de 10 a 19 unidades = 10%
-    if (quantidadeEstoque >= 10) {
+    if (_quantidadeEstoque >= 10) {
       return total * 0.10;
     }
     // de 5 a 9 unidades = 5%
-    if (quantidadeEstoque >= 5) {
+    if (_quantidadeEstoque >= 5) {
       return total * 0.05;
     }
     // até 4 unidades = 0%
@@ -40,16 +81,16 @@ class Produto {
   }
 
   double calcularTotal() {
-    double total = precoUni * quantidadeEstoque;
+    double total = _precoUni * _quantidadeEstoque;
     return total - calcularDesconto();
   }
 
   void exibirResumo() {
     print("=========================================");
-    print("Código: $codigo");
+    print("Código: $_codigo");
     print("Nome: $nome");
-    print("Preço: $precoUni");
-    print("Quantidade: $quantidadeEstoque");
+    print("Preço: $_precoUni");
+    print("Quantidade: $_quantidadeEstoque");
     print("Desconto: ${calcularDesconto()}");
     print("Total: ${calcularTotal()}");
     print("=========================================\n");

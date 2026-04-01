@@ -1,20 +1,20 @@
 class Pessoa {
-  String nome;
-  int idade;
+  String _nome;
+  int _idade;
 
-  Pessoa(this.nome, this.idade) {
-    if (nome.isEmpty) {
+  Pessoa(this._nome, this._idade) {
+    if (_nome.isEmpty) {
       print("Nome não pode ser vazio!");
     }
-    if (idade < 0 || idade.isNaN) {
+    if (_idade < 0 || _idade.isNaN) {
       print("Idade não pode ser negativa!");
     }
   }
 
   void exibirDados() {
     print("=============================");
-    print("Nome:  $nome");
-    print("Idade: $idade");
+    print("Nome:  $_nome");
+    print("Idade: $_idade");
     print("=============================");
   }
 }
