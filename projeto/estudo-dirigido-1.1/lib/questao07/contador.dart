@@ -29,16 +29,4 @@ class Contador {
   void exibirValor() {
     print("Valor: $_valorInicial");
   }
-
-  set valor(int valor) {
-    if (_valorInicial < 0) {
-      print(
-        "Aviso: Valor inicial negativo detectado. O contador foi definido para 0.",
-      );
-      _valorInicial = 0;
-    }
-    _valorInicial = valor;
-  }
-
-  int get valor => _valorInicial;
 }
