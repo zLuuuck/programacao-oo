@@ -1,21 +1,26 @@
+import 'dart:io';
+
 class Data {
   int _dia;
   int _mes;
   int _ano;
 
   Data(this._dia, this._mes, this._ano) {
-    if (1 > _dia || _dia > 31) {
-      print("_dia deve estar entre 1 e 31!");
+    if (_dia < 1 || _dia > 31) {
+      print("Dia deve estar entre 1 e 31!");
+      exit(1);
     }
-    if (1 > _mes || _mes > 12) {
-      print("_mes deve estar entre 0-12!");
+    if (_mes < 1 || _mes > 12) {
+      print("Mês deve estar entre 1 e 12!");
+      exit(1);
     }
-    if (0 > _ano) {
-      print("_ano deve ser maior que zero!");
+    if (_ano <= 0) {
+      print("Ano deve ser maior que zero!");
+      exit(1);
     }
   }
 
   void exibirDia() {
-    print("_dia: $_dia/$_mes/$_ano");
+    print("Data: $_dia/$_mes/$_ano");
   }
 }
