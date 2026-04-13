@@ -21,3 +21,12 @@ void main() {
   u1.verSaldo();
   u2.verSaldo();
 }
+
+// a)Qual é a vantagem de usar construtores nomeados nesse caso?
+// Porque os dois usuários compartilham a mesma instância de Conta.
+
+// b)O que muda no estado inicial de cada objeto conforme o construtor utilizado?
+// Cada usuário teria uma conta independente, com saldo separado.
+
+// c)Em vez de criar métodos separados para configurar o cargo depois, por que pode ser melhor definir isso já no construtor?
+// Sim, é útil para representar situações como contas conjuntas ou sistemas compartilhados.
