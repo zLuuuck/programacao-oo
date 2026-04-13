@@ -39,9 +39,9 @@ class Aluno {
     print("Nota final: $_notaFinal");
 
     if (aprovado()) {
-      print("Situação: Aprovado");
+      print("Situação: Aprovado(a)");
     } else {
-      print("Situação: Reprovado");
+      print("Situação: Reprovado(a)");
     }
 
     print("======================");

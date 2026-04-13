@@ -1,8 +1,8 @@
 import 'conta.dart';
 
 void main() {
-  var conta1 = Conta.bancaria("123", "João");
-  var conta2 = Conta.vip("456", "Maria", 1000);
+  var conta1 = Conta.bancaria("123", "Caio");
+  var conta2 = Conta.vip("456", "Lucas", 1000);
 
   conta1.exibirResumo();
   conta2.exibirResumo();
