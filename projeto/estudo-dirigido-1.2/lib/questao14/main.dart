@@ -8,10 +8,10 @@ void main() {
   var g2 = Gerente();
 
   g1.depositar(conta, 500);
-  conta.exibir();
+  conta.exibirSaldo();
 
   g2.sacar(conta, 200);
-  conta.exibir();
+  conta.exibirSaldo();
 }
 
 // a) Por que os dois gerentes conseguem alterar o mesmo saldo?

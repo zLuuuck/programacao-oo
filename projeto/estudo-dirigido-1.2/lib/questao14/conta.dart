@@ -10,7 +10,7 @@ class Conta {
     _saldo = saldo;
   }
 
-  void exibir(){
+  void exibirSaldo() {
     print("Titular: $_titular | Saldo: $_saldo");
   }
 }
