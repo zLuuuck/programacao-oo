@@ -1,5 +1,4 @@
-import 'carrinho.dart';
-
+import '../questao07/carrinho.dart';
 class Pedido {
   String _numero;
   Carrinho _carrinho;

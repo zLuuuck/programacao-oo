@@ -1,3 +1,5 @@
+import '../questao03/produto.dart';
+
 class ListaProduto {
   final List<Produto> _produtos = [];
 

@@ -1,5 +1,5 @@
-import 'cliente.dart';
-import 'item_carrinho.dart';
+import '../questao01/cliente.dart';
+import '../questao05/item_carrinho.dart';
 
 class Carrinho {
   Cliente _cliente;

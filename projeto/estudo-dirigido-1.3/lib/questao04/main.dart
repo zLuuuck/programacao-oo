@@ -1,4 +1,5 @@
 import 'listarProduto.dart';
+import '../questao03/produto.dart';
 
 void main() {
   var listaProdutos = ListaProduto();

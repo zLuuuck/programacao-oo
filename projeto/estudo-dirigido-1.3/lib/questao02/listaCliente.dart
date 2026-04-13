@@ -1,3 +1,5 @@
+import '../questao01/cliente.dart';
+
 class ListaCliente {
   final List<Cliente> _clientes = [];
 

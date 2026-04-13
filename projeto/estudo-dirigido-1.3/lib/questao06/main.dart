@@ -1,4 +1,6 @@
 import 'listarCarrinho.dart';
+import '../questao05/item_carrinho.dart';
+import '../questao03/produto.dart';
 
 void main() {
   var listaItens = ListaCarrinho();

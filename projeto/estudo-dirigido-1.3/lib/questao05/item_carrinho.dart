@@ -1,5 +1,4 @@
-import 'produto.dart';
-
+import '../questao03/produto.dart';
 class ItemCarrinho {
   Produto _produto;
   int _quantidade;

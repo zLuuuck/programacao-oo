@@ -1,3 +1,9 @@
+import '../questao02/listaCliente.dart';
+import '../questao04/listarProduto.dart';
+import '../questao09/pedido.dart';
+import '../questao01/cliente.dart';
+import '../questao03/produto.dart';
+
 class Loja {
   String _nome;
   ListaCliente _clientes;

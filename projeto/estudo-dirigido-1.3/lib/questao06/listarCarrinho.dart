@@ -1,3 +1,5 @@
+import '../questao05/item_carrinho.dart';
+
 class ListaCarrinho {
   final List<ItemCarrinho> _itens = [];
 
