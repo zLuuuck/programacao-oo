@@ -5,6 +5,10 @@ void main() {
   var tv = Televisao(10,50);
   var controle = ControleRemoto(tv);
 
+  tv.exibir();
+
+  print('\nMudar volume e canal usando o controle remoto...\n');
+
   controle.aumentarVolume();
   controle.proximoCanal();
 

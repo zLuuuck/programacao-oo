@@ -2,7 +2,7 @@ import 'personagem.dart';
 
 void main() {
   // criando um objeto
-  var p1 = Personagem("Herói", 100, 50);
+  var p1 = Personagem("Chauã", 100, 50);
 
   // segunda variável apontando para o MESMO objeto
   var p2 = p1;
