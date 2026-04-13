@@ -5,8 +5,8 @@ void main() {
   var conta = Conta(1000);
 
   // dois usuários usando a MESMA conta
-  var u1 = Usuario("João", conta);
-  var u2 = Usuario("Maria", conta);
+  var u1 = Usuario("Caio", conta);
+  var u2 = Usuario("Lucas", conta);
 
   print("=== ESTADO INICIAL ===\n");
   u1.verSaldo();

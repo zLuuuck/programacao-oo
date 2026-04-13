@@ -5,8 +5,10 @@ void main() {
   var agenda1 = Agenda.vazia();
   agenda1.adicionarContato(Contato("Lucas", "123"));
 
-  var lista = [Contato("Ana", "999")];
+  var lista = [Contato("Douglas", "999")];
   var agenda2 = Agenda.comContatos(lista);
+  agenda2.adicionarContato(Contato("Caio", "123"));
+
 
   agenda1.listarContatos();
   agenda2.listarContatos();
