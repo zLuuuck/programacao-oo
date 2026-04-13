@@ -8,7 +8,7 @@ void main() {
   Pessoa? p2 = p1;
 
   print("Estado inicial:\n");
-  p1!.exibir();
+  p1.exibir();
 
   print("\nAlterando saldo pela variável p2...\n");
   carteira.alterarSaldo(50);
