@@ -24,8 +24,6 @@ class CupomDesconto {
     if (valor >= 0 && valor <= 100) _percentual = valor;
   }
 
-  set ativo(bool valor) => _ativo = valor;
-
   void ativar() => _ativo = true;
   void desativar() => _ativo = false;
 
