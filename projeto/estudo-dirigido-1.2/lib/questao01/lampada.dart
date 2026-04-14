@@ -1,27 +1,27 @@
 class Lampada {
-  late bool _ligada;
+  late bool _estaLigada;
   late int _intensidade;
 
   // construtor sem parâmetros
   Lampada(){
-    _ligada = false;
+    _estaLigada = false;
     _intensidade = 50;
   }
 
   void ligar() {
-    if (_ligada) {
+    if (_estaLigada) {
       print("A lâmpada já está ligada!");
     } else {
-      _ligada = true;
+      _estaLigada = true;
       print("Lâmpada ligada!");
     }
   }
 
   void desligar() {
-    if (!_ligada) {
+    if (!_estaLigada) {
       print("A lâmpada já está desligada!");
     } else {
-      _ligada = false;
+      _estaLigada = false;
       print("Lâmpada desligada!");
     }
   }
@@ -46,7 +46,7 @@ class Lampada {
 
   void exibirEstado() {
     print("======================");
-    print("Ligada: $_ligada");
+    print("Ligada: $_estaLigada");
     print("Intensidade: $_intensidade");
     print("======================");
   }

@@ -10,9 +10,11 @@ class Loja {
   ListaProduto _produtos;
   List<Pedido> _pedidos;
 
-  Loja(this._nome, this._clientes, this._produtos, this._pedidos)
-      : assert(_nome.isNotEmpty, 'Nome da loja não pode ser vazio');
-
+  Loja(this._nome, this._clientes, this._produtos, this._pedidos){
+    if(_nome.isEmpty){
+      print("Nome não pode ser vazio!");
+    }
+  }
   String get nome => _nome;
   ListaCliente get clientes => _clientes;
   ListaProduto get produtos => _produtos;

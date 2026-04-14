@@ -18,15 +18,21 @@ class Produto {
 
   // setters
   set nome(String valor) {
-    if (valor.isNotEmpty) _nome = valor;
+    if (valor.isNotEmpty) {
+      _nome = valor;
+    }
   }
 
   set preco(double valor) {
-    if (valor >= 0) _preco = valor;
+    if (valor >= 0) {
+      _preco = valor;
+    }
   }
 
   set estoque(int valor) {
-    if (valor >= 0) _estoque = valor;
+    if (valor >= 0){
+      _estoque = valor;
+    } 
   }
 
   set ativo(bool valor) {

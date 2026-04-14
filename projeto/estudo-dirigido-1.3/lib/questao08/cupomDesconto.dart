@@ -3,9 +3,14 @@ class CupomDesconto {
   double _percentual;
   bool _ativo;
 
-  CupomDesconto(this._codigo, this._percentual, this._ativo)
-      : assert(_codigo.isNotEmpty, 'Código não pode ser vazio'),
-        assert(_percentual >= 0 && _percentual <= 100, 'Percentual entre 0 e 100');
+  CupomDesconto(this._codigo, this._percentual, this._ativo) {
+    if (_codigo.isEmpty) {
+      print('Código não pode ser vazio.');
+    }
+    if (_percentual >= 0 && _percentual <= 100) {
+      print("Percentual deve ser entre 0 e 100");
+    }
+  }
 
   String get codigo => _codigo;
   double get percentual => _percentual;
@@ -25,7 +30,13 @@ class CupomDesconto {
   void desativar() => _ativo = false;
 
   double calcularDesconto(double valor) {
-    return _ativo ? valor * (1 - _percentual / 100) : valor;
+    if (_ativo) {
+      double desconto = _percentual / 100;
+      double valorFinal = valor * (1 - desconto);
+      return valorFinal;
+    } else {
+      return valor;
+    }
   }
 
   void exibirCupom() {
