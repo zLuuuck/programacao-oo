@@ -5,17 +5,24 @@ class ListaCarrinho {
 
   void inserir(ItemCarrinho item) => _itens.add(item);
 
-  void remover(int i) {
-    if (i >= 0 && i < _itens.length) {
-      _itens.removeAt(i);
+  void remover(int indice) {
+    if (indice >= 0 && indice < _itens.length) {
+      _itens.removeAt(indice);
+    } else {
+      print("Índice inválido!");
     }
   }
 
   int tamanho() => _itens.length;
 
-  ItemCarrinho? get(int i) {
-    return (i >= 0 && i < _itens.length) ? _itens[i] : null;
-  }
+  ItemCarrinho? get(int indice) {
+    if (indice >= 0 && indice < _itens.length) {
+      return _itens[indice];
+    } else {
+      print("Índice inválido!");
+      return null;
+    }
+  } 
 
   void exibirLista() {
     print('--- Itens do Carrinho (${_itens.length}) ---');

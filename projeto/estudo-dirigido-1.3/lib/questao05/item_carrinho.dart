@@ -4,7 +4,9 @@ class ItemCarrinho {
   int _quantidade;
 
   ItemCarrinho(this._produto, this._quantidade) {
-    if (_quantidade <= 0) _quantidade = 1;
+    if (_quantidade <= 0) {
+      _quantidade = 1;
+    }
   }
 
   // getters
@@ -13,7 +15,9 @@ class ItemCarrinho {
 
   // setters
   set quantidade(int valor) {
-    if (valor > 0) _quantidade = valor;
+    if (valor > 0) {
+      _quantidade = valor;
+    }
   }
 
   double calcularSubtotal() {

@@ -10,7 +10,9 @@ class Pedido {
       : _totalBruto = 0,
         _totalFinal = 0,
         _status = "aberto" {
-    if (_numero.isEmpty) _numero = "000";
+    if (_numero.isEmpty) {
+      _numero = "000";
+    }
   }
 
   void fecharPedido() {
