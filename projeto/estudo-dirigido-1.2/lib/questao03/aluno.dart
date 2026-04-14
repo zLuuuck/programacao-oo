@@ -11,7 +11,6 @@ class Aluno {
   })  : _ra = ra,
         _nome = nome,
         _notaFinal = notaFinal {
-    // validações simples no seu estilo
     if (_ra <= 0) {
       print("RA inválido! Definido como 1");
       _ra = 1;
