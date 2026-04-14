@@ -5,9 +5,15 @@ class Cliente {
   bool _ativo;
 
   Cliente(this._nome, this._email, this._saldoCarteira, this._ativo) {
-    if (_nome.isEmpty) _nome = "Cliente";
-    if (_email.isEmpty) _email = "email@email.com";
-    if (_saldoCarteira < 0) _saldoCarteira = 0;
+    if (_nome.isEmpty) {
+      _nome = "Cliente";
+    }
+    if (_email.isEmpty) {
+      _email = "email@email.com";
+    }
+    if (_saldoCarteira < 0) {
+      _saldoCarteira = 0;
+    }
   }
 
   // getters

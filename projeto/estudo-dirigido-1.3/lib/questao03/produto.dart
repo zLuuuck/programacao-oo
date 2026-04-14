@@ -5,9 +5,15 @@ class Produto {
   bool _ativo;
 
   Produto(this._nome, this._preco, this._estoque, this._ativo) {
-    if (_nome.isEmpty) _nome = "Produto";
-    if (_preco < 0) _preco = 0;
-    if (_estoque < 0) _estoque = 0;
+    if (_nome.isEmpty) {
+      _nome = "Produto";
+    }
+    if (_preco < 0) {
+      _preco = 0;
+    }
+    if (_estoque < 0) {
+      _estoque = 0;
+    }
   }
 
   // getters
