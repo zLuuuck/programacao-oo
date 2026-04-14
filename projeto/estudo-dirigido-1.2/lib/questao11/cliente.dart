@@ -10,7 +10,6 @@ class Cliente {
     }
   }
 
-  // 👇 agora funciona
   Cliente.copia(Cliente outro)
       : _nome = outro._nome,
         _endereco = Endereco(
