@@ -6,7 +6,7 @@ import '../questao03/produto.dart';
 
 void main() {
   var loja = Loja('Minha Loja', ListaCliente(), ListaProduto(), []);
-  loja.cadastrarCliente(Cliente('João', 'joao@mail.com', 200, true));
-  loja.cadastrarProduto(Produto('Livro', 45, 10, true));
+  loja.cadastrarCliente(Cliente('Lucas', 'lucas@gmail.com', 200, true));
+  loja.cadastrarProduto(Produto('Pokémon Fire Red', 45, 10, true));
   loja.exibirResumoLoja();
 }
