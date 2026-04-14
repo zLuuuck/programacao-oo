@@ -4,12 +4,17 @@ class Endereco {
   String _cidade;
 
   Endereco(this._rua, this._numero, this._cidade) {
-    if (_rua.isEmpty) _rua = "Rua";
-    if (_numero <= 0) _numero = 1;
-    if (_cidade.isEmpty) _cidade = "Cidade";
+    if (_rua.isEmpty) {
+      _rua = "Rua";
+    }
+    if (_numero <= 0) {
+      _numero = 1;
+    }
+    if (_cidade.isEmpty) {
+      _cidade = "Cidade";
+    }
   }
 
-  // 👇 GETTERS (solução)
   String get rua => _rua;
   int get numero => _numero;
   String get cidade => _cidade;

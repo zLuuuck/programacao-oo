@@ -5,7 +5,9 @@ class Cliente {
   Endereco _endereco;
 
   Cliente(this._nome, this._endereco) {
-    if (_nome.isEmpty) _nome = "Cliente";
+    if (_nome.isEmpty){
+      _nome = "Cliente";
+    }
   }
 
   // 👇 agora funciona

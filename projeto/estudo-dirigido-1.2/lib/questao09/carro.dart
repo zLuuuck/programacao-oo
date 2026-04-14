@@ -3,8 +3,12 @@ class Carro {
   int _quilometragem;
 
   Carro(this._modelo, this._quilometragem) {
-    if (_modelo.isEmpty) _modelo = "Carro";
-    if (_quilometragem < 0) _quilometragem = 0;
+    if (_modelo.isEmpty){
+      _modelo = "Carro";
+    }
+    if (_quilometragem < 0) {
+      _quilometragem = 0;
+    }
   }
 
   void exibirEstado() {
