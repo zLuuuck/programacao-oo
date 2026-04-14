@@ -13,15 +13,21 @@ class ListaProduto {
 
   int tamanho() => _produtos.length;
 
-  Produto? get(int i) {
-    return (i >= 0 && i < _produtos.length) ? _produtos[i] : null;
+  Produto? get(int indice) {
+    if (indice >= 0 && indice < _produtos.length) {
+      return _produtos[indice];
+    } else {
+      print("Índice inválido!");
+      return null;
+    }
   }
 
   void exibirLista() {
     print('--- Produtos (${_produtos.length}) ---');
     for (int i = 0; i < _produtos.length; i++) {
-      print('[$i] ${_produtos[i].nome} - R\$ ${_produtos[i].preco.toStringAsFixed(2)}');
+      print(
+        '[$i] ${_produtos[i].nome} - R\$ ${_produtos[i].preco.toStringAsFixed(2)}',
+      );
     }
   }
 }
-
