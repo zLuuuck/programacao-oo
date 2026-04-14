@@ -14,7 +14,11 @@ class ListaCliente {
   int tamanho() => _clientes.length;
 
   Cliente? get(int i) {
-    return (i >= 0 && i < _clientes.length) ? _clientes[i] : null;
+    if (i >= 0 && i < _clientes.length) {
+      return _clientes[i];
+    } else {
+      return null;
+    }
   }
 
   void exibirLista() {
