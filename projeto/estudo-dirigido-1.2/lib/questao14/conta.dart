@@ -4,7 +4,7 @@ class Conta {
 
   Conta(this._titular, this._saldo);
 
-  double get saldo => saldo;
+  double get saldo => _saldo;
 
   set saldo(saldo){
     _saldo = saldo;
