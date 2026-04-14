@@ -2,6 +2,7 @@ import 'carteira.dart';
 
 class Pessoa {
   String _nome;
+  // carteira pode ter valor nulo
   Carteira? _carteira;
 
   Pessoa(this._nome, this._carteira) {

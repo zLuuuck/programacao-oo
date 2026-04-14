@@ -4,6 +4,7 @@ import 'carteira.dart';
 void main() {
   var carteira = Carteira(100);
 
+  // chatgpt
   Pessoa? p1 = Pessoa("João", carteira);
   Pessoa? p2 = p1;
 
