@@ -7,18 +7,18 @@ class ListaProduto {
     _produtos.add(p);
   }
 
-  void remover(int i) {
-    if (i >= 0 && i < _produtos.length) {
-      _produtos.removeAt(i);
-    }
-  }
-
   int tamanho() {
     return _produtos.length;
   }
 
+  void remover(int i) {
+    if (i >= 0 && i < tamanho()) {
+      _produtos.removeAt(i);
+    }
+  }
+
   Produto get(int i) {
-    if (i >= 0 && i < _produtos.length) {
+    if (i >= 0 && i < tamanho()) {
       return _produtos[i];
     }
 

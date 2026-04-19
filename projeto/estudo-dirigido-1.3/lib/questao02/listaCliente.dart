@@ -8,7 +8,7 @@ class ListaCliente {
   }
 
   void remover(int i) {
-    if (i >= 0 && i < _clientes.length) {
+    if (i >= 0 && i < tamanho()) {
       _clientes.removeAt(i);
     }
   }
@@ -18,12 +18,12 @@ class ListaCliente {
   }
 
   Cliente get(int i) {
-    if (i >= 0 && i < _clientes.length) {
+    if (i >= 0 && i < tamanho()) {
       return _clientes[i];
     }
 
     print("Índice inválido");
-    return _clientes[0]; // ou qualquer padrão
+    return _clientes[0]; 
   }
 
   void exibirLista() {

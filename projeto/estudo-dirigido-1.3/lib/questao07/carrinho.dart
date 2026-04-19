@@ -5,7 +5,7 @@ import '../questao05/itemCarrinho.dart';
 class Carrinho {
   Cliente _cliente;
   ListaCarrinho _itens;
-  bool _aberto;
+  bool _aberto; // pra que serve o aberto? ele não está sendo usado, mas é pedido para ser um atributo.
 
   Carrinho(Cliente cliente)
       : _cliente = cliente,

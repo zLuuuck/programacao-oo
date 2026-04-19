@@ -57,12 +57,22 @@ class Produto {
   }
 
   void reporEstoque(int q) {
+    if (_ativo == false) {
+      print(
+        "Produto desativado; Não pode fazer operações em uma produto desativado",
+      );
+    }
     if (q > 0) {
       _estoque += q;
     }
   }
 
   void retirarEstoque(int q) {
+    if (_ativo == false) {
+      print(
+        "Produto desativado; Não pode fazer operações em uma produto desativado",
+      );
+    }
     if (q <= _estoque) {
       _estoque -= q;
     }
