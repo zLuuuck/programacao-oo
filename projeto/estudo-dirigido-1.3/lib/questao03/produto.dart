@@ -4,56 +4,68 @@ class Produto {
   int _estoque;
   bool _ativo;
 
-  Produto(this._nome, this._preco, this._estoque, this._ativo) {
-    if (_nome.isEmpty) {
-      _nome = "Produto";
-    }
-    if (_preco < 0) {
-      _preco = 0;
-    }
-    if (_estoque < 0) {
-      _estoque = 0;
-    }
+  Produto(String nome, double preco, int estoque, bool ativo)
+      : _nome = '',
+        _preco = 0,
+        _estoque = 0,
+        _ativo = false {
+    this.nome = nome;
+    this.preco = preco;
+    this.estoque = estoque;
+    this.ativo = ativo;
   }
 
-  // getters
   String get nome => _nome;
   double get preco => _preco;
   int get estoque => _estoque;
   bool get ativo => _ativo;
 
-  // setters
   set nome(String valor) {
-    if (valor.isNotEmpty) {
+    if (valor.trim().isEmpty) {
+      print("Nome inválido");
+    } else {
       _nome = valor;
     }
   }
 
   set preco(double valor) {
-    if (valor >= 0) {
+    if (valor < 0) {
+      print("Preço inválido");
+    } else {
       _preco = valor;
     }
   }
 
   set estoque(int valor) {
-    if (valor >= 0){
+    if (valor < 0) {
+      print("Estoque inválido");
+    } else {
       _estoque = valor;
-    } 
+    }
   }
 
   set ativo(bool valor) {
     _ativo = valor;
   }
 
-  void ativar() => _ativo = true;
-  void desativar() => _ativo = false;
-
-  void reporEstoque(int qtd) {
-    if (qtd > 0) _estoque += qtd;
+  void ativar() {
+    _ativo = true;
   }
 
-  void retirarEstoque(int qtd) {
-    if (qtd > 0 && qtd <= _estoque) _estoque -= qtd;
+  void desativar() {
+    _ativo = false;
+  }
+
+  void reporEstoque(int q) {
+    if (q > 0) {
+      _estoque += q;
+    }
+  }
+
+  void retirarEstoque(int q) {
+    if (q <= _estoque) {
+      _estoque -= q;
+    }
   }
 
   void exibirProduto() {

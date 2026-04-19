@@ -1,12 +1,18 @@
 import '../questao01/cliente.dart';
-import './listaCliente.dart';
+import 'listaCliente.dart';
 
-void main(){
-  var listaClientes = ListaCliente();
-  listaClientes.inserir(Cliente('Ana', 'ana@mail.com', 100, true));
-  listaClientes.inserir(Cliente('Bruno', 'bruno@mail.com', 50, true));
-  listaClientes.remover(0);
-  print('Tamanho: ${listaClientes.tamanho()}');
-  listaClientes.exibirLista();
-  print('Cliente na pos 0: ${listaClientes.get(0)?.nome}');
+void main() {
+  var c1 = Cliente("Lucas", "a", 100, true);
+  var c2 = Cliente("Caio", "b", 200, true);
+
+  var lista = ListaCliente();
+
+  lista.inserir(c1);
+  lista.inserir(c2);
+
+  lista.remover(0);
+
+  print("Tamanho: ${lista.tamanho()}");
+
+  lista.exibirLista();
 }

@@ -1,7 +1,13 @@
-import './cupomDesconto.dart';
+import 'cupomDesconto.dart';
 
-void main(){
-  var cupom = CupomDesconto('DESC20', 20, true);
+void main() {
+  var cupom = CupomDesconto("DESC10", 10, true);
+
   cupom.exibirCupom();
-  print('Desconto sobre 100: ${cupom.calcularDesconto(100)}');
+
+  double valor = 100;
+  double desconto = cupom.calcularDesconto(valor);
+
+  print("Valor: $valor");
+  print("Desconto: $desconto");
 }

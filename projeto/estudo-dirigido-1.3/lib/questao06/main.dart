@@ -1,12 +1,21 @@
-import 'listarCarrinho.dart';
-import '../questao05/item_carrinho.dart';
 import '../questao03/produto.dart';
+import '../questao05/itemCarrinho.dart';
+import 'listaCarrinho.dart';
 
 void main() {
-  var listaItens = ListaCarrinho();
-  var prod = Produto('Caneta', 2.5, 100, true);
-  listaItens.inserir(ItemCarrinho(prod, 3));
-  listaItens.inserir(ItemCarrinho(Produto('Caderno', 15, 50, true), 2));
-  listaItens.remover(0);
-  listaItens.exibirLista();
+  var p = Produto("Headset", 200, 20, true);
+
+  var i1 = ItemCarrinho(p, 1);
+  var i2 = ItemCarrinho(p, 2);
+
+  var lista = ListaCarrinho();
+
+  lista.inserir(i1);
+  lista.inserir(i2);
+
+  lista.remover(0);
+
+  print("Tamanho: ${lista.tamanho()}");
+
+  lista.exibirLista();
 }

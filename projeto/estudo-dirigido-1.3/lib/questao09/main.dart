@@ -1,24 +1,25 @@
 import '../questao01/cliente.dart';
 import '../questao03/produto.dart';
-import '../questao05/item_carrinho.dart';
+import '../questao05/itemCarrinho.dart';
 import '../questao07/carrinho.dart';
+import '../questao08/cupomDesconto.dart';
 import 'pedido.dart';
 
 void main() {
-  var cliente = Cliente("Lucas", "lucas@gmail.com", 100, true);
+  var cliente = Cliente("Lucas", "a", 500, true);
 
-  var p1 = Produto("Mouse", 50, 10, true);
-  var p2 = Produto("Teclado", 100, 5, true);
+  var p = Produto("Playstation", 3000, 10, true);
 
-  var item1 = ItemCarrinho(p1, 2);
-  var item2 = ItemCarrinho(p2, 1);
+  var item = ItemCarrinho(p, 1);
 
   var carrinho = Carrinho(cliente);
-  carrinho.adicionarItem(item1);
-  carrinho.adicionarItem(item2);
+  carrinho.adicionarItem(item);
 
-  var pedido = Pedido("001", carrinho);
+  var cupom = CupomDesconto("DESC10", 10, true);
+
+  var pedido = Pedido("001", carrinho, cupom);
 
   pedido.fecharPedido();
+
   pedido.exibirResumoPedido();
 }

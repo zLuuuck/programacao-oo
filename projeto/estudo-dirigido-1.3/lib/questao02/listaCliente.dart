@@ -1,9 +1,11 @@
 import '../questao01/cliente.dart';
 
 class ListaCliente {
-  final List<Cliente> _clientes = [];
+  List<Cliente> _clientes = [];
 
-  void inserir(Cliente cliente) => _clientes.add(cliente);
+  void inserir(Cliente cliente) {
+    _clientes.add(cliente);
+  }
 
   void remover(int i) {
     if (i >= 0 && i < _clientes.length) {
@@ -11,20 +13,22 @@ class ListaCliente {
     }
   }
 
-  int tamanho() => _clientes.length;
+  int tamanho() {
+    return _clientes.length;
+  }
 
-  Cliente? get(int i) {
+  Cliente get(int i) {
     if (i >= 0 && i < _clientes.length) {
       return _clientes[i];
-    } else {
-      return null;
     }
+
+    print("Índice inválido");
+    return _clientes[0]; // ou qualquer padrão
   }
 
   void exibirLista() {
-    print('--- Clientes (${_clientes.length}) ---');
-    for (int i = 0; i < _clientes.length; i++) {
-      print('[$i] ${_clientes[i].nome}');
+    for (var c in _clientes) {
+      c.exibirCliente();
     }
   }
 }

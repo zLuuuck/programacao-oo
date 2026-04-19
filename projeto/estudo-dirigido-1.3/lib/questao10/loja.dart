@@ -1,8 +1,8 @@
-import '../questao02/listaCliente.dart';
-import '../questao04/listarProduto.dart';
-import '../questao09/pedido.dart';
 import '../questao01/cliente.dart';
+import '../questao02/listaCliente.dart';
 import '../questao03/produto.dart';
+import '../questao04/listaProduto.dart';
+import '../questao09/pedido.dart';
 
 class Loja {
   String _nome;
@@ -10,31 +10,44 @@ class Loja {
   ListaProduto _produtos;
   List<Pedido> _pedidos;
 
-  Loja(this._nome, this._clientes, this._produtos, this._pedidos){
-    if(_nome.isEmpty){
-      print("Nome não pode ser vazio!");
-    }
+  Loja(String nome)
+      : _nome = '',
+        _clientes = ListaCliente(),
+        _produtos = ListaProduto(),
+        _pedidos = [] {
+    this.nome = nome;
   }
-  String get nome => _nome;
-  ListaCliente get clientes => _clientes;
-  ListaProduto get produtos => _produtos;
-  List<Pedido> get pedidos => _pedidos;
 
   set nome(String valor) {
-    if (valor.isNotEmpty) _nome = valor;
+    if (valor.trim().isNotEmpty) {
+      _nome = valor;
+    }
   }
-  set clientes(ListaCliente valor) => _clientes = valor;
-  set produtos(ListaProduto valor) => _produtos = valor;
-  set pedidos(List<Pedido> valor) => _pedidos = valor;
 
-  void cadastrarCliente(Cliente cliente) => _clientes.inserir(cliente);
-  void cadastrarProduto(Produto produto) => _produtos.inserir(produto);
-  void registrarPedido(Pedido pedido) => _pedidos.add(pedido);
+  void cadastrarCliente(Cliente c) {
+    _clientes.inserir(c);
+  }
+
+  void cadastrarProduto(Produto p) {
+    _produtos.inserir(p);
+  }
+
+  void registrarPedido(Pedido p) {
+    _pedidos.add(p);
+  }
 
   void exibirResumoLoja() {
-    print('\n===== LOJA: $_nome =====');
-    print('Clientes: ${_clientes.tamanho()} | Produtos: ${_produtos.tamanho()} | Pedidos: ${_pedidos.length}');
+    print("Loja: $_nome");
+
+    print("Clientes:");
     _clientes.exibirLista();
+
+    print("Produtos:");
     _produtos.exibirLista();
+
+    print("Pedidos:");
+    for (var p in _pedidos) {
+      p.exibirResumoPedido();
+    }
   }
 }

@@ -4,50 +4,66 @@ class Cliente {
   double _saldoCarteira;
   bool _ativo;
 
-  Cliente(this._nome, this._email, this._saldoCarteira, this._ativo) {
-    if (_nome.isEmpty) {
-      _nome = "Cliente";
-    }
-    if (_email.isEmpty) {
-      _email = "email@email.com";
-    }
-    if (_saldoCarteira < 0) {
-      _saldoCarteira = 0;
-    }
+  Cliente(String nome, String email, double saldo, bool ativo)
+      : _nome = '',
+        _email = '',
+        _saldoCarteira = 0,
+        _ativo = false {
+    this.nome = nome;
+    this.email = email;
+    this.saldoCarteira = saldo;
+    this.ativo = ativo;
   }
 
-  // getters
   String get nome => _nome;
   String get email => _email;
-  double get saldo => _saldoCarteira;
+  double get saldoCarteira => _saldoCarteira;
   bool get ativo => _ativo;
 
-  // setters
   set nome(String valor) {
-    if (valor.isNotEmpty) _nome = valor;
+    if (valor.trim().isEmpty) {
+      print("Nome inválido");
+    } else {
+      _nome = valor;
+    }
   }
 
   set email(String valor) {
-    if (valor.isNotEmpty) _email = valor;
+    if (valor.trim().isEmpty) {
+      print("Email inválido");
+    } else {
+      _email = valor;
+    }
   }
 
-  set saldo(double valor) {
-    if (valor >= 0) _saldoCarteira = valor;
+  set saldoCarteira(double valor) {
+    if (valor < 0) {
+      print("Saldo inválido");
+    } else {
+      _saldoCarteira = valor;
+    }
   }
 
   set ativo(bool valor) {
     _ativo = valor;
   }
 
-  void ativar() => _ativo = true;
-  void desativar() => _ativo = false;
+  void ativar() {
+    _ativo = true;
+  }
+
+  void desativar() {
+    _ativo = false;
+  }
 
   void adicionarSaldo(double valor) {
-    if (valor > 0) _saldoCarteira += valor;
+    if (valor > 0) {
+      _saldoCarteira += valor;
+    }
   }
 
   void debitarSaldo(double valor) {
-    if (valor > 0 && valor <= _saldoCarteira) {
+    if (valor <= _saldoCarteira) {
       _saldoCarteira -= valor;
     }
   }
