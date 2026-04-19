@@ -8,6 +8,21 @@ class Lampada {
     _intensidade = 50;
   }
 
+   // Getters e Setters
+  bool get estaLigada => _estaLigada;
+  set estaLigada(bool valor) => _estaLigada = valor;
+
+  int get intensidade => _intensidade;
+  set intensidade(int valor) {
+    if (valor < 0) {
+      valor = 0;
+    }
+    if (valor > 100) {
+      valor = 100;
+    }
+    _intensidade = valor;
+  }
+
   void ligar() {
     if (_estaLigada) {
       print("A lâmpada já está ligada!");

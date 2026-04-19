@@ -3,7 +3,7 @@ class Aluno {
   String _nome;
   double _notaFinal;
 
-  // construtor com parâmetros nomeados obrigatórios
+  // Construtor com parâmetros nomeados obrigatórios
   Aluno({
     required int ra,
     required String nome,
@@ -11,19 +11,42 @@ class Aluno {
   })  : _ra = ra,
         _nome = nome,
         _notaFinal = notaFinal {
-    if (_ra <= 0) {
+    // Usa os setters para aplicar as validações
+    this.ra = ra; //chama o setter de ra, setter de nome, ....
+    this.nome = nome;
+    this.notaFinal = notaFinal;
+  }
+
+  // Getters
+  int get ra => _ra;
+  String get nome => _nome;
+  double get notaFinal => _notaFinal;
+
+  // Setters com validações
+  set ra(int valor) {
+    if (valor <= 0) {
       print("RA inválido! Definido como 1");
       _ra = 1;
+    } else {
+      _ra = valor;
     }
+  }
 
-    if (_nome.isEmpty) {
+  set nome(String valor) {
+    if (valor.isEmpty) {
       print("Nome inválido! Definido como 'Aluno'");
       _nome = "Aluno";
+    } else {
+      _nome = valor;
     }
+  }
 
-    if (_notaFinal < 0 || _notaFinal > 10) {
+  set notaFinal(double valor) {
+    if (valor < 0 || valor > 10) {
       print("Nota inválida! Definida como 0");
       _notaFinal = 0;
+    } else {
+      _notaFinal = valor;
     }
   }
 
@@ -42,7 +65,6 @@ class Aluno {
     } else {
       print("Situação: Reprovado(a)");
     }
-
     print("======================");
   }
 }

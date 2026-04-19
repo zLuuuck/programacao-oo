@@ -3,40 +3,53 @@ class Conta {
   String _titular;
   double _saldo;
 
-  // construtor conta bancária (saldo 0)
+  // Construtores nomeados (ambos chamam os setters para validar os dados)
   Conta.bancaria(String numero, String titular)
       : _numero = numero,
         _titular = titular,
         _saldo = 0 {
-    if (_numero.isEmpty) {
-      print("Número inválido! Definido como '000'");
-      _numero = "000";
-    }
-
-    if (_titular.isEmpty) {
-      print("Titular inválido! Definido como 'Cliente'");
-      _titular = "Cliente";
-    }
+    // Aplica as validações via setters
+    this.numero = numero;
+    this.titular = titular;
   }
 
-  // construtor conta VIP
   Conta.vip(String numero, String titular, double saldoInicial)
       : _numero = numero,
         _titular = titular,
         _saldo = saldoInicial {
-    if (_numero.isEmpty) {
+    this.numero = numero;
+    this.titular = titular;
+    this.saldo = saldoInicial;
+  }
+
+  // Getters e Setters com validações
+  String get numero => _numero;
+  set numero(String valor) {
+    if (valor.isEmpty) {
       print("Número inválido! Definido como '000'");
       _numero = "000";
+    } else {
+      _numero = valor;
     }
+  }
 
-    if (_titular.isEmpty) {
+  String get titular => _titular;
+  set titular(String valor) {
+    if (valor.isEmpty) {
       print("Titular inválido! Definido como 'Cliente'");
       _titular = "Cliente";
+    } else {
+      _titular = valor;
     }
+  }
 
-    if (_saldo < 0) {
+  double get saldo => _saldo;
+  set saldo(double valor) {
+    if (valor < 0) {
       print("Saldo inválido! Definido como 0");
       _saldo = 0;
+    } else {
+      _saldo = valor;
     }
   }
 
@@ -45,9 +58,8 @@ class Conta {
       print("Depósito inválido!");
       return;
     }
-
     _saldo += valor;
-    print("Depósito de $valor realizado!");
+    print("Depósito de R\$ $valor realizado!");
   }
 
   void sacar(double valor) {
@@ -55,21 +67,19 @@ class Conta {
       print("Saque inválido!");
       return;
     }
-
     if (valor > _saldo) {
       print("Saldo insuficiente!");
       return;
     }
-
     _saldo -= valor;
-    print("Saque de $valor realizado!");
+    print("Saque de R\$ $valor realizado!");
   }
 
   void exibirResumo() {
     print("======================");
     print("Conta: $_numero");
     print("Titular: $_titular");
-    print("Saldo: $_saldo");
+    print("Saldo: R\$ $_saldo");
     print("======================");
   }
 }

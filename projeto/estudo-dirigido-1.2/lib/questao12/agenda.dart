@@ -5,10 +5,13 @@ class Agenda {
 
   Agenda.vazia() : _contatos = [];
 
-  Agenda.comContatos(this._contatos);
+  Agenda.comContatos(this._contatos); // sem cópia (como no original)
+
+  // Getter para acessar a lista (cuidado: expõe a referência interna)
+  List<Contato> get contatos => _contatos;
 
   void adicionarContato(Contato c) {
-    _contatos.add(c);
+      _contatos.add(c);
   }
 
   void removerContatoPorNome(String nome) {
