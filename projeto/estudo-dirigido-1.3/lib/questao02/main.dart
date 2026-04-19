@@ -2,7 +2,6 @@ import '../questao01/cliente.dart';
 import './listaCliente.dart';
 
 void main(){
-  print('--- QUESTÃO 2 ---');
   var listaClientes = ListaCliente();
   listaClientes.inserir(Cliente('Ana', 'ana@mail.com', 100, true));
   listaClientes.inserir(Cliente('Bruno', 'bruno@mail.com', 50, true));
