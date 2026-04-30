@@ -1,11 +1,11 @@
 import 'veiculo.dart';
 
 void main() {
-  Veiculo veiculo = Veiculo('Toyota', 'Corolla', 2020);
+  Veiculo veiculo = Veiculo('Volkswagen', 'Fusca', 1998);
   veiculo.exibirFicha();
 
   print('');
 
-  Carro carro = Carro('Honda', 'Civic', 2021, 4);
+  Carro carro = Carro('Koenigsegg', 'Agera R', 2021, 2);
   carro.exibirFicha();
 }
