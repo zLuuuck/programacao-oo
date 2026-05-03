@@ -6,9 +6,9 @@ import '../questao09/pedido.dart';
 
 class Loja {
   String _nome;
-  ListaCliente _clientes;
-  ListaProduto _produtos;
-  List<Pedido> _pedidos;
+  final ListaCliente _clientes;
+  final ListaProduto _produtos;
+  final List<Pedido> _pedidos;
 
   // Construtor com validação do nome
   Loja(String nome)

@@ -1,7 +1,7 @@
 class Funcionario {
-  String _nome;
-  String _cargo;
-  double _salario;
+  final String _nome;
+  final String _cargo;
+  final double _salario;
 
   // Construtor nomeado: Estagiário (salário fixo R$ 1500)
   Funcionario.estagiario(String nome)

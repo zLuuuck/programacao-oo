@@ -11,7 +11,7 @@ class Cliente {
       _ativo = false {
     this.nome = nome;
     this.email = email;
-    this.saldoCarteira = saldo;
+    saldoCarteira = saldo;
     this.ativo = ativo;
   }
 

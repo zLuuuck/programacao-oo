@@ -1,6 +1,6 @@
 class Funcionario {
-  String _nome;
-  double _salario;
+  final String _nome;
+  final double _salario;
 
   Funcionario(this._nome, this._salario);
 
@@ -12,9 +12,9 @@ class Funcionario {
 
 class Gerente extends Funcionario {
 
-  String _setor;
+  final String _setor;
 
-  Gerente(String _nome, double _salario, this._setor) : super(_nome, _salario);
+  Gerente(super._nome, super._salario, this._setor);
 
   @override
   void exibirdados() {

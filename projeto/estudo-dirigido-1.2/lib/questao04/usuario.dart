@@ -7,8 +7,8 @@ class Usuario {
   Usuario(this._nome, this._email, [String? apelido])
       : _apelido = '' {
     // Usa os setters para aplicar validações
-    this.nome = _nome;
-    this.email = _email;
+    nome = _nome;
+    email = _email;
     this.apelido = apelido ?? _nome; // se apelido não for fornecido, usa o nome
   }
 

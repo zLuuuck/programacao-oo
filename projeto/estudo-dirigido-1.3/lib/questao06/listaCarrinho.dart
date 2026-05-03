@@ -1,7 +1,7 @@
 import '../questao05/itemCarrinho.dart';
 
 class ListaCarrinho {
-  List<ItemCarrinho> _itens = [];
+  final List<ItemCarrinho> _itens = [];
 
   void inserir(ItemCarrinho item) {
     _itens.add(item);

@@ -1,7 +1,7 @@
 import '../questao03/produto.dart';
 
 class ListaProduto {
-  List<Produto> _produtos = [];
+  final List<Produto> _produtos = [];
 
   void inserir(Produto p) {
     _produtos.add(p);

@@ -3,8 +3,8 @@ import '../questao08/cupomDesconto.dart';
 
 class Pedido {
   String _numero;
-  Carrinho _carrinho;
-  CupomDesconto _cupom;
+  final Carrinho _carrinho;
+  final CupomDesconto _cupom;
   double _totalBruto;
   double _totalFinal;
   String _status;

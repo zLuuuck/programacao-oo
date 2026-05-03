@@ -1,7 +1,7 @@
 class Aluno {
   String nome;
-  double _nota1;
-  double _nota2;
+  final double _nota1;
+  final double _nota2;
 
   Aluno(this.nome, this._nota1, this._nota2) {
     if (nome.isEmpty) {

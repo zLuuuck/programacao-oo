@@ -19,7 +19,7 @@ class Conta {
         _saldo = saldoInicial {
     this.numero = numero;
     this.titular = titular;
-    this.saldo = saldoInicial;
+    saldo = saldoInicial;
   }
 
   // Getters e Setters com validações

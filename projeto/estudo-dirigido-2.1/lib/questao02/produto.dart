@@ -1,6 +1,6 @@
 class Produto {
-  String _nome;
-  double _preco;
+  final String _nome;
+  final double _preco;
 
   Produto(this._nome, this._preco);
 
@@ -11,9 +11,9 @@ class Produto {
 }
 
 class ProdutoPerecivel extends Produto {
-  String _dataValidade;
+  final String _dataValidade;
 
-  ProdutoPerecivel(String _nome, double _preco, this._dataValidade) : super(_nome, _preco);
+  ProdutoPerecivel(super._nome, super._preco, this._dataValidade);
 
   @override
   void exibirDados() {

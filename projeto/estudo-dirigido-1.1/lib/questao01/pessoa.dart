@@ -1,8 +1,8 @@
 import 'dart:io';
 
 class Pessoa {
-  String _nome;
-  int _idade;
+  final String _nome;
+  final int _idade;
 
   Pessoa(this._nome, this._idade) {
     if (_nome.isEmpty) {

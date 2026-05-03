@@ -20,7 +20,7 @@ class Carteira {
   }
 
   void alterarSaldo(double valor) {
-    this.saldo = valor;   // delega para o setter
+    saldo = valor;   // delega para o setter
   }
 
   void exibir() {

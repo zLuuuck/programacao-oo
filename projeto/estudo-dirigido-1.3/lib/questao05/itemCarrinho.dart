@@ -1,7 +1,7 @@
 import '../questao03/produto.dart';
 
 class ItemCarrinho {
-  Produto _produto;
+  final Produto _produto;
   int _quantidade;
 
   ItemCarrinho(Produto produto, int quantidade)

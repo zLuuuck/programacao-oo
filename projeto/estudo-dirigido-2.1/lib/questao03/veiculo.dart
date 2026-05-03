@@ -1,7 +1,7 @@
 class Veiculo {
-  String _marca;
-  String _modelo;
-  int _ano;
+  final String _marca;
+  final String _modelo;
+  final int _ano;
 
   Veiculo(this._marca, this._modelo, this._ano);
 
@@ -13,9 +13,9 @@ class Veiculo {
 }
 
 class Carro extends Veiculo {
-  int _numeroPortas;
+  final int _numeroPortas;
 
-  Carro(String _marca, String _modelo, int _ano, this._numeroPortas) : super(_marca, _modelo, _ano);
+  Carro(super._marca, super._modelo, super._ano, this._numeroPortas);
 
   @override
   void exibirFicha() {

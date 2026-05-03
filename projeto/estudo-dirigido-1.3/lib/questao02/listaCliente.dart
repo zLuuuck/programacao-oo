@@ -1,7 +1,7 @@
 import '../questao01/cliente.dart';
 
 class ListaCliente {
-  List<Cliente> _clientes = [];
+  final List<Cliente> _clientes = [];
 
   void inserir(Cliente cliente) {
     _clientes.add(cliente);

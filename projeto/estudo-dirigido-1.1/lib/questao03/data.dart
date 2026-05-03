@@ -1,9 +1,9 @@
 import 'dart:io';
 
 class Data {
-  int _dia;
-  int _mes;
-  int _ano;
+  final int _dia;
+  final int _mes;
+  final int _ano;
 
   Data(this._dia, this._mes, this._ano) {
     if (_dia < 1 || _dia > 31) {

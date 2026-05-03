@@ -1,9 +1,9 @@
 import 'dart:io';
 
 class Relogio {
-  int _hora;
-  int _minuto;
-  int _segundo;
+  final int _hora;
+  final int _minuto;
+  final int _segundo;
 
   Relogio(this._hora, this._minuto, this._segundo) {
     if (_hora < 0 || _hora > 23) {

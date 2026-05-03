@@ -50,7 +50,7 @@ class Televisao {
   }
 
   void proximoCanal() {
-    this.canal = _canal++;  // permite qualquer inteiro positivo; o setter não é chamado
+    canal = _canal++;  // permite qualquer inteiro positivo; o setter não é chamado
   }
 
   void canalAnterior() {

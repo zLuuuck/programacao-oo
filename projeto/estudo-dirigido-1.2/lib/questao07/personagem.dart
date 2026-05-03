@@ -47,7 +47,7 @@ class Personagem {
   }
 
   void alterarVida(int valor) {
-    this.vida = valor; // delega para o setter
+    vida = valor; // delega para o setter
   }
 
   void exibirEstado() {

@@ -8,8 +8,8 @@ class Aluno {
   String _ra;
   double _nota1;
   double _nota2;
-  bool _bolsa;
-  bool _disponibilidade;
+  final bool _bolsa;
+  final bool _disponibilidade;
 
   Aluno({
     required String nome,

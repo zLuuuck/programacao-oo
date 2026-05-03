@@ -11,8 +11,8 @@ class Retangulo {
   Retangulo.vazio() : _largura = 1, _altura = 1;
 
   Retangulo.quadrado(double lado) : _largura = lado, _altura = lado {
-    this.largura = lado;
-    this.altura = lado;
+    largura = lado;
+    altura = lado;
   }
 
   // Getters

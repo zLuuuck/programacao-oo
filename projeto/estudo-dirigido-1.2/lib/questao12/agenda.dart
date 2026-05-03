@@ -1,7 +1,7 @@
 import './contato.dart';
 
 class Agenda {
-  List<Contato> _contatos;
+  final List<Contato> _contatos;
 
   Agenda.vazia() : _contatos = [];
 
