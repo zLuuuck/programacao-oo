@@ -5,11 +5,10 @@ class Inimigo extends Personagem {
   int _recompensaXP;
   int _recompensaOuro;
 
-  Inimigo(String nome, int hp, int level, int recompensaXP, int recompensaOuro, int dmg)
+  Inimigo(super.nome, super.hp, super.level, int recompensaXP, int recompensaOuro, int dmg)
       : _recompensaXP = recompensaXP,
         _recompensaOuro = recompensaOuro,
-        _dmg = dmg,
-        super(nome, hp, level);
+        _dmg = dmg;
 
   int get recompensaXP => _recompensaXP;
   int get recompensaOuro => _recompensaOuro;
@@ -57,9 +56,8 @@ class Inimigo extends Personagem {
 class Goblin extends Inimigo {
   int spd;
 
-  Goblin(String nome, int hp, int level, int recompensaXP, int recompensaOuro, int dmg, int spd)
-      : spd = spd,
-        super(nome, hp, level, recompensaXP, recompensaOuro, dmg);
+  Goblin(super.nome, super.hp, super.level, super.recompensaXP, super.recompensaOuro, super.dmg, int spd)
+      : spd = spd;
 
   @override
   void exibirStatusPersonagem() {
@@ -72,9 +70,8 @@ class Goblin extends Inimigo {
 class Dragao extends Inimigo {
   int firePower;
 
-  Dragao(String nome, int hp, int level, int recompensaXP, int recompensaOuro, int dmg, int firePower)
-      : firePower = firePower,
-        super(nome, hp, level, recompensaXP, recompensaOuro, dmg);
+  Dragao(super.nome, super.hp, super.level, super.recompensaXP, super.recompensaOuro, super.dmg, int firePower)
+      : firePower = firePower;
 
   void soltarFogo(Personagem alvo) {
     print('$nome lança uma rajada de fogo em ${alvo.nome} causando $firePower de dano!');
