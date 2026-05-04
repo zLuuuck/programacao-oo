@@ -1,17 +1,18 @@
 import 'personagem.dart';
 
 class Combatente extends Personagem {
-  int _dmg;
+  int _dmg = 1; 
 
   Combatente(String nome, int hp, int level, int dmg)
-      : _dmg = dmg,
-        super(nome, hp, level);
+      : super(nome, hp, level) {
+    this.dmg = dmg;  
+  }
 
   int get dmg => _dmg;
 
   set dmg(int valor) {
     if (valor < 0) {
-      print('Dano não pode ser negativo.');
+      print('Dano não pode ser negativo. Mantido valor anterior/padrão.');
       return;
     }
     _dmg = valor;
@@ -30,24 +31,25 @@ class Combatente extends Personagem {
 }
 
 class Guerreiro extends Combatente {
-  int _armorlvl;
+  int _armorlvl = 0;
 
-Guerreiro(String nome, int hp, int level, int dmg, int armorlvl)
-    : _armorlvl = armorlvl,        
-      super(nome, hp, level, dmg);  
+  Guerreiro(String nome, int hp, int level, int dmg, int armorlvl)
+      : super(nome, hp, level, dmg) {
+    this.armorlvl = armorlvl;
+  }
 
-  int get armorlvl => _armorlvl; 
+  int get armorlvl => _armorlvl;
 
   set armorlvl(int valor) {
     if (valor < 0) {
-      print('Nível de armadura não pode ser negativo.');
+      print('Nível de armadura não pode ser negativo. Mantido valor anterior/padrão.');
       return;
     }
     _armorlvl = valor;
   }
 
   void atqPesado(Personagem alvo) {
-    int danoPesado = (dmg * 2);
+    int danoPesado = dmg * 2;
     print('$nome realiza um ataque pesado em ${alvo.nome} causando $danoPesado de dano!');
     alvo.receberDano(danoPesado);
   }
@@ -62,17 +64,18 @@ Guerreiro(String nome, int hp, int level, int dmg, int armorlvl)
 }
 
 class Arqueiro extends Combatente {
-  int _flechas;
+  int _flechas = 64; //um pack de flecha kkkk  
 
   Arqueiro(String nome, int hp, int level, int dmg, int flechas)
-      : _flechas = flechas,
-        super(nome, hp, level, dmg);
+      : super(nome, hp, level, dmg) {
+    this.flechas = flechas;
+  }
 
   int get flechas => _flechas;
 
   set flechas(int valor) {
     if (valor < 0) {
-      print('Número de flechas não pode ser negativo.');
+      print('Número de flechas não pode ser negativo. Mantido valor anterior/padrão.');
       return;
     }
     _flechas = valor;
@@ -98,17 +101,18 @@ class Arqueiro extends Combatente {
 }
 
 class Mago extends Combatente {
-  int _mana;
+  int _mana = 50;
 
   Mago(String nome, int hp, int level, int dmg, int mana)
-      : _mana = mana,
-        super(nome, hp, level, dmg);
+      : super(nome, hp, level, dmg) {
+    this.mana = mana;
+  }
 
   int get mana => _mana;
 
   set mana(int valor) {
     if (valor < 0) {
-      print('Mana não pode ser negativa.');
+      print('Mana não pode ser negativa. Mantido valor anterior/padrão.');
       return;
     }
     _mana = valor;
@@ -120,7 +124,7 @@ class Mago extends Combatente {
       return;
     }
     _mana -= 10;
-    int danoFeitico = (dmg + 15);
+    int danoFeitico = dmg + 15;
     print('$nome lança um feitiço em ${alvo.nome} causando $danoFeitico de dano!');
     alvo.receberDano(danoFeitico);
   }
