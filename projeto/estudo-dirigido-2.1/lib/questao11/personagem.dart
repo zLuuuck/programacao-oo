@@ -1,11 +1,11 @@
 class Personagem {
-  late String _nome; //usado late para poder fazer a validação via setter
-  late int _hp;
-  late int _level;
+  String _nome = 'Desconhecido';   
+  int _hp = 1;
+  int _level = 1;
   bool _vivo = true;
 
   Personagem(String nome, int hp, int level) {
-    this.nome = nome;
+    this.nome = nome;   
     this.hp = hp;
     this.level = level;
   }
@@ -17,7 +17,7 @@ class Personagem {
 
   set nome(String valor) {
     if (valor.trim().isEmpty) {
-      print('O nome não pode ser vazio.');
+      print('O nome não pode ser vazio. Mantido padrão "Desconhecido".');
       return;
     }
     _nome = valor;
@@ -25,7 +25,7 @@ class Personagem {
 
   set hp(int valor) {
     if (valor < 0) {
-      print('HP não pode ser negativo.');
+      print('HP não pode ser negativo. Mantido valor anterior/padrão.');
       return;
     }
     _hp = valor;
@@ -33,7 +33,7 @@ class Personagem {
 
   set level(int valor) {
     if (valor < 1) {
-      print('Level mínimo é 1.');
+      print('Level mínimo é 1. Mantido valor anterior/padrão.');
       return;
     }
     _level = valor;

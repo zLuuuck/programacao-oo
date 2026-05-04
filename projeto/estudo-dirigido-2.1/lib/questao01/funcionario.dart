@@ -1,20 +1,56 @@
 class Funcionario {
-  final String _nome;
-  final double _salario;
+  String _nome = 'Desconhecido';
+  double _salario = 0;
 
-  Funcionario(this._nome, this._salario);
+  Funcionario(String nome, double salario) {
+    this.nome = nome; 
+    this.salario = salario;
+  }
+
+  set nome(String nome) {
+    if (nome.isNotEmpty) {
+      _nome = nome;
+    } else {
+      print("Nome não pode ser vazio. Mantido padrão 'Desconhecido'.");
+      return;
+    }
+  }
+
+  set salario(double valor) {
+    if (valor >= 0) {
+      _salario = valor;
+    } else {
+      print("Salário não pode ser negativo. Mantido R\$ 0.");
+      return;
+    }
+  }
+
+  String get nome => _nome;
+  double get salario => _salario;
 
   void exibirdados() {
     print('Nome: $_nome');
-    print('Salário: R\$ $_salario');
+    print('Salário: R\$$_salario');
   }
 }
 
 class Gerente extends Funcionario {
+  String _setor = 'Não definido';
 
-  final String _setor;
+  Gerente(String nome, double salario, String setor) : super(nome, salario) {
+    this.setor = setor;
+  }
 
-  Gerente(super._nome, super._salario, this._setor);
+  set setor(String setor) {
+    if (setor.isNotEmpty) {
+      _setor = setor;
+    } else {
+      print("Setor não pode ser vazio. Mantido padrão 'Não definido'.");
+      return;
+    }
+  }
+
+  String get setor => _setor;
 
   @override
   void exibirdados() {

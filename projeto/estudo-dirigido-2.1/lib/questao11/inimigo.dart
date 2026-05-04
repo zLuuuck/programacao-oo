@@ -1,14 +1,16 @@
 import 'personagem.dart';
 
 class Inimigo extends Personagem {
-  int _dmg;
-  int _recompensaXP;
-  int _recompensaOuro;
+  int _dmg = 1;
+  int _recompensaXP = 0;
+  int _recompensaOuro = 0;
 
-  Inimigo(super.nome, super.hp, super.level, int recompensaXP, int recompensaOuro, int dmg)
-      : _recompensaXP = recompensaXP,
-        _recompensaOuro = recompensaOuro,
-        _dmg = dmg;
+  Inimigo(String nome, int hp, int level, int recompensaXP, int recompensaOuro, int dmg)
+    : super(nome, hp, level) {
+    this.recompensaXP = recompensaXP;
+    this.recompensaOuro = recompensaOuro;
+    this.dmg = dmg;
+  }
 
   int get recompensaXP => _recompensaXP;
   int get recompensaOuro => _recompensaOuro;
@@ -16,7 +18,7 @@ class Inimigo extends Personagem {
 
   set dmg(int valor) {
     if (valor < 0) {
-      print('Dano não pode ser negativo.');
+      print('Dano não pode ser negativo. Mantido valor anterior/padrão.');
       return;
     }
     _dmg = valor;
@@ -24,7 +26,7 @@ class Inimigo extends Personagem {
 
   set recompensaXP(int valor) {
     if (valor < 0) {
-      print('Recompensa de XP não pode ser negativa.');
+      print('Recompensa de XP não pode ser negativa. Mantido valor anterior/padrão.');
       return;
     }
     _recompensaXP = valor;
@@ -32,7 +34,7 @@ class Inimigo extends Personagem {
 
   set recompensaOuro(int valor) {
     if (valor < 0) {
-      print('Recompensa de ouro não pode ser negativa.');
+      print('Recompensa de ouro não pode ser negativa. Mantido valor anterior/padrão.');
       return;
     }
     _recompensaOuro = valor;
@@ -54,28 +56,52 @@ class Inimigo extends Personagem {
 }
 
 class Goblin extends Inimigo {
-  int spd;
+  int _spd = 0; 
 
-  Goblin(super.nome, super.hp, super.level, super.recompensaXP, super.recompensaOuro, super.dmg, int spd)
-      : spd = spd;
+  Goblin(String nome, int hp, int level, int recompensaXP, int recompensaOuro, int dmg, int spd)
+      : super(nome, hp, level, recompensaXP, recompensaOuro, dmg) {
+    this.spd = spd;
+  }
+
+  int get spd => _spd;
+
+  set spd(int valor) {
+    if (valor < 0) {
+      print('Velocidade não pode ser negativa. Mantido valor anterior/padrão.');
+      return;
+    }
+    _spd = valor;
+  }
 
   @override
   void exibirStatusPersonagem() {
     super.exibirStatusPersonagem();
     print('Tipo: Goblin');
-    print('Velocidade: $spd');
+    print('Velocidade: $_spd');
   }
 }
 
 class Dragao extends Inimigo {
-  int firePower;
+  int _firePower = 10;  
 
-  Dragao(super.nome, super.hp, super.level, super.recompensaXP, super.recompensaOuro, super.dmg, int firePower)
-      : firePower = firePower;
+  Dragao(String nome, int hp, int level, int recompensaXP, int recompensaOuro, int dmg, int firePower)
+      : super(nome, hp, level, recompensaXP, recompensaOuro, dmg) {
+    this.firePower = firePower;
+  }
+
+  int get firePower => _firePower;
+
+  set firePower(int valor) {
+    if (valor < 0) {
+      print('Poder de fogo não pode ser negativo. Mantido valor anterior/padrão.');
+      return;
+    }
+    _firePower = valor;
+  }
 
   void soltarFogo(Personagem alvo) {
-    print('$nome lança uma rajada de fogo em ${alvo.nome} causando $firePower de dano!');
-    alvo.receberDano(firePower);
+    print('$nome lança uma rajada de fogo em ${alvo.nome} causando $_firePower de dano!');
+    alvo.receberDano(_firePower);
   }
 
   @override
@@ -87,6 +113,6 @@ class Dragao extends Inimigo {
   void exibirStatusPersonagem() {
     super.exibirStatusPersonagem();
     print('Tipo: Dragão');
-    print('Poder de Fogo: $firePower');
+    print('Poder de Fogo: $_firePower');
   }
 }
