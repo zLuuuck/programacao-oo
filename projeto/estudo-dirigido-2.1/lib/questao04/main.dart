@@ -25,10 +25,10 @@ void main() {
   cc.exibirSaldo();
 
   print("\n===== TESTES COM VALORES INVÁLIDOS =====");
-  var contaInvalida = ContaBancaria('', -50);  // nome vazio, saldo negativo
-  contaInvalida.exibirSaldo();                 // usa valores padrão
-  contaInvalida.depositar(-10);                // valor inválido
-  contaInvalida.sacar(-5);                     // valor inválido
+  var contaInvalida = ContaBancaria('', -50);  
+  contaInvalida.exibirSaldo();                 
+  contaInvalida.depositar(-10);                
+  contaInvalida.sacar(-5);                    
 
   var cpInvalida = ContaPoupanca('', -100);    // herda validação
   cpInvalida.exibirSaldo();
