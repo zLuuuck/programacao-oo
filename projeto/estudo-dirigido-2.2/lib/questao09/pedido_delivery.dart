@@ -1,12 +1,52 @@
 import 'pedido.dart';
 
 class PedidoDelivery extends Pedido {
-  double taxa;
+  String _enderecoEntrega = 'Não informado';
+  double _taxaEntrega = 0;
 
-  PedidoDelivery(String codigo, double valor, this.taxa)
-      : super(codigo, valor);
+  PedidoDelivery(
+    String codigo,
+    double valorTotal,
+    String enderecoEntrega,
+    double taxaEntrega,
+  ) : super(codigo, valorTotal) {
+    this.enderecoEntrega = enderecoEntrega;
+    this.taxaEntrega = taxaEntrega;
+  }
 
-  double total() {
-    return valor + taxa;
+  String get enderecoEntrega => _enderecoEntrega;
+
+  set enderecoEntrega(String enderecoEntrega) {
+    if (enderecoEntrega.trim().isEmpty) {
+      print(
+        'Endereço de entrega não pode ser vazio. Mantido: $_enderecoEntrega',
+      );
+      return;
+    }
+
+    _enderecoEntrega = enderecoEntrega;
+  }
+
+  double get taxaEntrega => _taxaEntrega;
+
+  set taxaEntrega(double taxaEntrega) {
+    if (taxaEntrega < 0) {
+      print(
+        'Taxa de entrega não pode ser negativa. Mantida: R\$ $_taxaEntrega',
+      );
+      return;
+    }
+
+    _taxaEntrega = taxaEntrega;
+  }
+
+  @override
+  void exibirPedido() {
+    print('Pedido delivery');
+    print('Código: $codigo');
+    print('Valor total: R\$ $valorTotal');
+    print('Endereço de entrega: $enderecoEntrega');
+    print('Taxa de entrega: R\$ $taxaEntrega');
+    print('Valor final: R\$ ${valorTotal + taxaEntrega}');
   }
 }

@@ -1,11 +1,11 @@
-import 'produto.dart';
+import 'produto_perecivel.dart';
 
 void main() {
-  Produto produto = Produto('Computador', 10000.0);
-  produto.exibirDados();
+  ProdutoPerecivel produto = ProdutoPerecivel(
+    'Creme de leite',
+    5,
+    '31/12/2026',
+  );
 
-  print('');
-
-  ProdutoPerecivel produtoPerecivel = ProdutoPerecivel('Creme de Leite', 5.0, '2023-12-31');
-  produtoPerecivel.exibirDados();
+  produto.exibir();
 }

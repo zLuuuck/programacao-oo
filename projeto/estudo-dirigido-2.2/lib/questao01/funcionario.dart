@@ -1,33 +1,33 @@
 abstract class Funcionario {
-  String _nome = 'Desconhecido';
+  String _nome = 'Não informado';
   double _salario = 0;
 
   Funcionario(String nome, double salario) {
-    this.nome = nome; 
+    this.nome = nome;
     this.salario = salario;
   }
 
-  set nome(String nome) {
-    if (nome.isNotEmpty) {
-      _nome = nome;
-    } else {
-      print("Nome não pode ser vazio. Mantido padrão 'Desconhecido'.");
-      return;
-    }
-  }
-
-  set salario(double valor) {
-    if (valor >= 0) {
-      _salario = valor;
-    } else {
-      print("Salário não pode ser negativo. Mantido R\$ 0.");
-      return;
-    }
-  }
-
   String get nome => _nome;
+
+  set nome(String nome) {
+    if (nome.trim().isEmpty) {
+      print('Nome do funcionário não pode ser vazio. Mantido: $_nome');
+      return;
+    }
+
+    _nome = nome;
+  }
+
   double get salario => _salario;
 
-  void exibirdados();
-}
+  set salario(double salario) {
+    if (salario < 0) {
+      print('Salário não pode ser negativo. Mantido: R\$ $_salario');
+      return;
+    }
 
+    _salario = salario;
+  }
+
+  void exibirDados();
+}

@@ -1,11 +1,12 @@
+import 'carro.dart';
+import 'moto.dart';
 import 'veiculo.dart';
 
 void main() {
-  Veiculo veiculo = Veiculo('Volkswagen', 'Fusca', 1998);
-  veiculo.exibirFicha();
+  Veiculo carro = Carro('Koenigsegg', 'Agera R', 2021, 2);
+  Veiculo moto = Moto('Honda', 'CB 500F', 2024, 500);
 
-  print('');
-
-  Carro carro = Carro('Koenigsegg', 'Agera R', 2021, 2);
   carro.exibirFicha();
+  print('');
+  moto.exibirFicha();
 }

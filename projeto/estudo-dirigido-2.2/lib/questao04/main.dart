@@ -1,38 +1,17 @@
-import 'conta.dart';
+import 'conta_corrente.dart';
+import 'conta_poupanca.dart';
 
 void main() {
-  print("===== CONTA BANCÁRIA (base) =====");
-  var contaBase = ContaBancaria('Luacas', 1000);
-  contaBase.exibirSaldo();
-  contaBase.depositar(500);
-  contaBase.sacar(300);
-  contaBase.sacar(1500);  // saldo insuficiente
-  contaBase.exibirSaldo();
+  ContaPoupanca poupanca = ContaPoupanca('Caio', 1000);
+  ContaCorrente corrente = ContaCorrente('Chauã', 2000);
 
-  print("\n===== CONTA POUPANÇA (1%) =====");
-  var cp = ContaPoupanca('Caio', 1000);
-  cp.exibirSaldo();
-  cp.depositar(200);
-  cp.sacar(100);
-  cp.aplicarRendimento();  // 1% de (1000+200-100 = 1100) -> 11
-  cp.exibirSaldo();
+  poupanca.depositar(200);
+  poupanca.aplicarRendimento();
+  poupanca.exibirSaldo();
 
-  print("\n===== CONTA CORRENTE (5%) =====");
-  var cc = ContaCorrente('Chaua', 2000);
-  cc.exibirSaldo();
-  cc.sacar(500);
-  cc.aplicarRendimento();  // 5% de (2000-500 = 1500) -> 75
-  cc.exibirSaldo();
+  print('');
 
-  print("\n===== TESTES COM VALORES INVÁLIDOS =====");
-  var contaInvalida = ContaBancaria('', -50);  
-  contaInvalida.exibirSaldo();                 
-  contaInvalida.depositar(-10);                
-  contaInvalida.sacar(-5);                    
-
-  var cpInvalida = ContaPoupanca('', -100);    // herda validação
-  cpInvalida.exibirSaldo();
-  cpInvalida.aplicarRendimento();              // 1% de 0 ainda é 0
-
-  print("\n===== FIM DOS TESTES =====");
+  corrente.depositar(500);
+  corrente.aplicarRendimento();
+  corrente.exibirSaldo();
 }

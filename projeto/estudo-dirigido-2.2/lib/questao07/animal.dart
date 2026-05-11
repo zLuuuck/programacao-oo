@@ -1,9 +1,20 @@
-class Animal {
-  String nome;
+abstract class Animal {
+  String _nome = 'Não informado';
 
-  Animal(this.nome);
-
-  void emitirSom() {
-    print("Som genérico");
+  Animal(String nome) {
+    this.nome = nome;
   }
+
+  String get nome => _nome;
+
+  set nome(String nome) {
+    if (nome.trim().isEmpty) {
+      print('Nome do animal não pode ser vazio. Mantido: $_nome');
+      return;
+    }
+
+    _nome = nome;
+  }
+
+  void emitirSom();
 }

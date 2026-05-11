@@ -5,6 +5,6 @@ class Gato extends Animal {
 
   @override
   void emitirSom() {
-    print("Miau");
+    print('miau');
   }
 }

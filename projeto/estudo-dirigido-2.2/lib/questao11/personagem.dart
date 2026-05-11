@@ -1,19 +1,17 @@
 abstract class Personagem {
   String _nome = 'Desconhecido';
-  int _hp = 1;
-  int _level = 1;
-  bool _vivo = true;
+  int _vida = 1;
+  int _nivel = 1;
 
-  Personagem(String nome, int hp, int level) {
+  Personagem(String nome, int vida, int nivel) {
     this.nome = nome;
-    this.hp = hp;
-    this.level = level;
+    this.vida = vida;
+    this.nivel = nivel;
   }
 
   String get nome => _nome;
-  int get hp => _hp;
-  int get level => _level;
-  bool get vivo => _vivo;
+  int get vida => _vida;
+  int get nivel => _nivel;
 
   set nome(String valor) {
     if (valor.trim().isEmpty) {
@@ -23,20 +21,20 @@ abstract class Personagem {
     _nome = valor;
   }
 
-  set hp(int valor) {
+  set vida(int valor) {
     if (valor < 0) {
-      print('HP não pode ser negativo. Mantido valor anterior/padrão.');
+      print('Vida não pode ser negativa. Mantido valor anterior/padrão.');
       return;
     }
-    _hp = valor;
+    _vida = valor;
   }
 
-  set level(int valor) {
+  set nivel(int valor) {
     if (valor < 1) {
-      print('Level mínimo é 1. Mantido valor anterior/padrão.');
+      print('Nível mínimo é 1. Mantido valor anterior/padrão.');
       return;
     }
-    _level = valor;
+    _nivel = valor;
   }
 
   void receberDano(int dano) {
@@ -44,32 +42,16 @@ abstract class Personagem {
       print('Dano não pode ser negativo. Ignorado.');
       return;
     }
-    _hp -= dano;
-    print('$nome recebeu $dano de dano. HP atual: $_hp');
-    estaVivo();
+    _vida -= dano;
+    if (_vida < 0) {
+      _vida = 0;
+    }
+    print('$nome recebeu $dano de dano. Vida atual: $_vida');
   }
 
   bool estaVivo() {
-    if (_hp <= 0) {
-      _vivo = false;
-      print('$_nome morreu!');
-    }
-    return _vivo;
+    return _vida > 0;
   }
 
-  void exibirStatusPersonagem();
+  void exibirStatus();
 }
-
-abstract interface class Atacante {
-  void atacar(Personagem alvo);
-}
-
-abstract interface class Magico {
-  void lancarFeitico(Personagem alvo);
-}
-
-abstract interface class Flamejante {
-  void soltarChama(Personagem alvo);
-}
-
-

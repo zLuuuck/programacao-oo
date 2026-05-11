@@ -1,48 +1,31 @@
 class Ingresso {
-  String _evento = "Evento Desconhecido";
-  double _preco = 0;
+  String _evento = 'Não informado';
+  double _valor = 0;
 
-  Ingresso(String evento, double preco) {
+  Ingresso(String evento, double valor) {
     this.evento = evento;
-    this.preco = preco;
+    this.valor = valor;
   }
 
-  set evento(String nomeEvento) {
-    if (nomeEvento.isNotEmpty) {
-      _evento = nomeEvento;
-    } else {
-      print("O nome do evento não pode ser vazio. Mantido valor padrão de 'Evento Desconecido'.");
+  String get evento => _evento;
+
+  set evento(String evento) {
+    if (evento.trim().isEmpty) {
+      print('Evento não pode ser vazio. Mantido: $_evento');
       return;
     }
+
+    _evento = evento;
   }
 
-  set preco(double valor) {
-    if (valor >= 0) {
-      _preco = valor;
-    } else {
-      print("O preço do ingresso não pode ser negativo. Mantido valor padrão de R\$ 0.");
+  double get valor => _valor;
+
+  set valor(double valor) {
+    if (valor < 0) {
+      print('Valor não pode ser negativo. Mantido: R\$ $_valor');
       return;
     }
-  }
 
-  get evento => _evento;
-  get preco => _preco;
-
-  void exibirResumo() {
-    print("Evento: $_evento");
-    print("Preço: R\$ $_preco");
-  }
-}
-
-class IngressoVIP extends Ingresso {
-  double _valorAdicional = 50;
-
-  IngressoVIP(String evento, double preco) : super(evento, preco);
-
-  @override
-  void exibirResumo() {
-    super.exibirResumo();
-    print("Valor Adicional VIP: R\$ $_valorAdicional");
-    print("Preço Total VIP: R\$ ${preco + _valorAdicional}");
+    _valor = valor;
   }
 }

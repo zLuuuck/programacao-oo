@@ -1,12 +1,12 @@
 import 'funcionario.dart';
+import 'funcionario_comum.dart';
+import 'gerente.dart';
 
 void main() {
-  Funcionario funcionario = Funcionario('Lucas', 3000.0);
-  funcionario.exibirdados();
+  Funcionario funcionario = FuncionarioComum('Lucas', 3000);
+  Funcionario gerente = Gerente('Darci', 5000, 'Vendas');
 
-  print(''); 
-
-  Gerente gerente = Gerente('Darci', 5000.0, 'Vendas');
-  gerente.exibirdados();
-  
+  funcionario.exibirDados();
+  print('');
+  gerente.exibirDados();
 }
