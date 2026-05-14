@@ -4,15 +4,19 @@ import 'ingressos.dart';
 class IngressoPromocional extends Ingresso implements Calculavel {
   double _desconto = 0;
 
-  IngressoPromocional(super.evento, super.valor, double desconto) {
+  IngressoPromocional(
+    super.evento,
+    super.valor,
+    double desconto,
+  ) {
     this.desconto = desconto;
   }
 
   double get desconto => _desconto;
 
   set desconto(double desconto) {
-    if (desconto < 0 || desconto > 100) {
-      print('Desconto deve estar entre 0 e 100. Mantido: $_desconto%');
+    if (desconto < 0) {
+      print('Desconto não pode ser negativo. Mantido: R\$ $_desconto');
       return;
     }
 
@@ -21,6 +25,12 @@ class IngressoPromocional extends Ingresso implements Calculavel {
 
   @override
   double valorFinal() {
-    return valor - (valor * desconto / 100);
+    return valor - desconto;
+  }
+
+  @override
+  String toString() {
+    return 'Evento: $evento | '
+        'Tipo: Promocional | ';
   }
 }

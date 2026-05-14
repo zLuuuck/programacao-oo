@@ -4,7 +4,11 @@ import 'ingressos.dart';
 class IngressoVip extends Ingresso implements Calculavel {
   double _valorAdicional = 0;
 
-  IngressoVip(super.evento, super.valor, double valorAdicional) {
+  IngressoVip(
+    super.evento,
+    super.valor,
+    double valorAdicional,
+  ) {
     this.valorAdicional = valorAdicional;
   }
 
@@ -24,5 +28,11 @@ class IngressoVip extends Ingresso implements Calculavel {
   @override
   double valorFinal() {
     return valor + valorAdicional;
+  }
+
+  @override
+  String toString() {
+    return 'Evento: $evento | '
+        'Tipo: VIP | ';
   }
 }
