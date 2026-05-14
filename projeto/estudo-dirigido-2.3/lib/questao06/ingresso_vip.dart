@@ -32,7 +32,6 @@ class IngressoVip extends Ingresso implements Calculavel {
 
   @override
   String toString() {
-    return 'Evento: $evento | '
-        'Tipo: VIP | ';
+    return 'Evento: $evento | Tipo: VIP | ';
   }
 }

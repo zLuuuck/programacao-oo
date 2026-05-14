@@ -30,7 +30,6 @@ class IngressoPromocional extends Ingresso implements Calculavel {
 
   @override
   String toString() {
-    return 'Evento: $evento | '
-        'Tipo: Promocional | ';
+    return 'Evento: $evento | Tipo: Promocional | ';
   }
 }

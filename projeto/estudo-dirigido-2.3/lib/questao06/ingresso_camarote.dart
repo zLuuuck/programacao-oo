@@ -46,8 +46,6 @@ class IngressoCamarote extends Ingresso implements Calculavel {
 
   @override
   String toString() {
-    return 'Evento: $evento | '
-        'Tipo: Camarote | '
-        'Localização: $localizacao | ';
+    return 'Evento: $evento | Tipo: Camarote | Localização: $localizacao | ';
   }
 }
