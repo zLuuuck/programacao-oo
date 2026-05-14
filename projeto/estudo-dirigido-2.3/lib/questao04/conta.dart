@@ -58,7 +58,7 @@ abstract class ContaBancaria implements Rentavel {
 
   @override
   String toString() {
-    return 'ContaBancaria(titular: $titular, saldo: R\$ $saldo, tipo: $tipoConta)';
+    return 'ContaBancaria - titular: $titular, saldo: R\$ $saldo, tipo: $tipoConta';
   }
 
   @override
