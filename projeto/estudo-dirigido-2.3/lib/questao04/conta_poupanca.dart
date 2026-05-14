@@ -10,4 +10,7 @@ class ContaPoupanca extends ContaBancaria implements Rentavel {
   void aplicarRendimento() {
     saldo += saldo * taxaRendimento;
   }
+
+  @override
+  String get tipoConta => 'ContaPoupanca';
 }

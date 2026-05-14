@@ -1,4 +1,6 @@
-class ContaBancaria {
+import 'rentavel.dart';
+
+abstract class ContaBancaria implements Rentavel {
   String _titular = 'Não informado';
   double _saldo = 0;
 
@@ -52,8 +54,13 @@ class ContaBancaria {
     _saldo -= valor;
   }
 
-  void exibirSaldo() {
-    print('Titular: $titular');
-    print('Saldo: R\$ $saldo');
+  String get tipoConta => 'ContaBancaria';
+
+  @override
+  String toString() {
+    return 'ContaBancaria(titular: $titular, saldo: R\$ $saldo, tipo: $tipoConta)';
   }
+
+  @override
+  void aplicarRendimento();
 }
