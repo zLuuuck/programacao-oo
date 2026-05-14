@@ -7,6 +7,7 @@ import 'calculavel.dart';
 void main() {
 
   ListaGenerica<Calculavel> lista = ListaGenerica<Calculavel>();
+  
   IngressoVip vip1 = IngressoVip('Show de Rock', 200, 80);
   IngressoVip vip2 = IngressoVip('Show de Pop', 180, 70);
   IngressoPromocional promocional1 = IngressoPromocional('Teatro Infantil', 100, 20);
