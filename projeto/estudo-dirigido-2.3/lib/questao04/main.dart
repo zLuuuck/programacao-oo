@@ -18,14 +18,14 @@ void main() {
   contas.adicionar(diego);
   contas.adicionar(elisa);
 
-  for (var conta in contas.obterItens()) {
-    print(conta);
-  }
+  contas.imprimirItens();
 
   print('\nAplicando rendimentos...\n');
 
   for (var conta in contas.obterItens()) {
     conta.aplicarRendimento();
-    print(conta);
   }
+
+  contas.imprimirItens();
+
 }
