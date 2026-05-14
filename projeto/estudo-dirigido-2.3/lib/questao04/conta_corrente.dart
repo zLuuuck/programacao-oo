@@ -10,4 +10,7 @@ class ContaCorrente extends ContaBancaria implements Rentavel {
   void aplicarRendimento() {
     saldo += saldo * taxaRendimento;
   }
+
+  String get tipoConta => 'ContaCorrente';
+
 }

@@ -1,17 +1,31 @@
+import '../lista_generica.dart';
 import 'conta_corrente.dart';
 import 'conta_poupanca.dart';
+import 'conta_investimento.dart';
+import 'conta.dart';
 
 void main() {
-  ContaPoupanca poupanca = ContaPoupanca('Caio', 1000);
-  ContaCorrente corrente = ContaCorrente('Chauã', 2000);
+  ContaPoupanca ana = ContaPoupanca('Ana', 1000);
+  ContaCorrente bruno = ContaCorrente('Bruno', 1500);
+  ContaInvestimento carla = ContaInvestimento('Carla', 5000);
+  ContaPoupanca diego = ContaPoupanca('Diego', 2500);
+  ContaCorrente elisa = ContaCorrente('Elisa', 800);
 
-  poupanca.depositar(200);
-  poupanca.aplicarRendimento();
-  poupanca.exibirSaldo();
+  ListaGenerica<ContaBancaria> contas = ListaGenerica();
+  contas.adicionar(ana);
+  contas.adicionar(bruno);
+  contas.adicionar(carla);
+  contas.adicionar(diego);
+  contas.adicionar(elisa);
 
-  print('');
+  for (var conta in contas.obterItens()) {
+    print(conta);
+  }
 
-  corrente.depositar(500);
-  corrente.aplicarRendimento();
-  corrente.exibirSaldo();
+  print('\nAplicando rendimentos...\n');
+
+  for (var conta in contas.obterItens()) {
+    conta.aplicarRendimento();
+    print(conta);
+  }
 }
