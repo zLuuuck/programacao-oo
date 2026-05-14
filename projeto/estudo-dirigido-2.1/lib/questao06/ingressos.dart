@@ -25,8 +25,8 @@ class Ingresso {
     }
   }
 
-  get evento => _evento;
-  get preco => _preco;
+  String get evento => _evento;
+  double get preco => _preco;
 
   void exibirResumo() {
     print("Evento: $_evento");
@@ -35,9 +35,9 @@ class Ingresso {
 }
 
 class IngressoVIP extends Ingresso {
-  double _valorAdicional = 50;
+  final double _valorAdicional = 50;
 
-  IngressoVIP(String evento, double preco) : super(evento, preco);
+  IngressoVIP(super.evento, super.preco);
 
   @override
   void exibirResumo() {

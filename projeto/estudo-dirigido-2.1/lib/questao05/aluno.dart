@@ -4,8 +4,7 @@ class Aluno extends Pessoa {
   String matricula;
   String curso;
 
-  Aluno(String nome, int idade, this.matricula, this.curso)
-      : super(nome, idade);
+  Aluno(super.nome, super.idade, this.matricula, this.curso);
 
   @override
   void exibirDados() {

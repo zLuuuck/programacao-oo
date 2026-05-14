@@ -5,8 +5,7 @@ import 'personagem.dart';
 class Mago extends Combatente implements Magico {
   int _mana = 0;
 
-  Mago(String nome, int vida, int nivel, int forca, int mana)
-    : super(nome, vida, nivel, forca) {
+  Mago(super.nome, super.vida, super.nivel, super.forca, int mana) {
     this.mana = mana;
   }
 

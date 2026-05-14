@@ -37,8 +37,7 @@ class Produto {
 class ProdutoPerecivel extends Produto {
   String _dataValidade = 'Não informada';
 
-  ProdutoPerecivel(String nome, double preco, String dataValidade)
-      : super(nome, preco) {
+  ProdutoPerecivel(super.nome, super.preco, String dataValidade) {
     this.dataValidade = dataValidade;   // setter valida
   }
 

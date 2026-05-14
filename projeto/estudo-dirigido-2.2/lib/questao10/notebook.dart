@@ -4,7 +4,7 @@ import 'ligavel.dart';
 class Notebook extends Dispositivo implements Ligavel {
   int _memoriaRam = 1;
 
-  Notebook(String marca, String modelo, int memoriaRam) : super(marca, modelo) {
+  Notebook(super.marca, super.modelo, int memoriaRam) {
     this.memoriaRam = memoriaRam;
   }
 

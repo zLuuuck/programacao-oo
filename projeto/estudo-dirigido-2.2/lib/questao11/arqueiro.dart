@@ -4,8 +4,7 @@ import 'personagem.dart';
 class Arqueiro extends Combatente {
   int _flechas = 0;
 
-  Arqueiro(String nome, int vida, int nivel, int forca, int flechas)
-    : super(nome, vida, nivel, forca) {
+  Arqueiro(super.nome, super.vida, super.nivel, super.forca, int flechas) {
     this.flechas = flechas;
   }
 

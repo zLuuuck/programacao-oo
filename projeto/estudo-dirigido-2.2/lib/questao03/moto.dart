@@ -3,8 +3,7 @@ import 'veiculo.dart';
 class Moto extends Veiculo {
   int _cilindradas = 1;
 
-  Moto(String marca, String modelo, int ano, int cilindradas)
-    : super(marca, modelo, ano) {
+  Moto(super.marca, super.modelo, super.ano, int cilindradas) {
     this.cilindradas = cilindradas;
   }
 

@@ -4,8 +4,7 @@ import 'livro.dart';
 class LivroFisico extends Livro implements Informativo {
   int _quantidadePaginas = 1;
 
-  LivroFisico(String titulo, String autor, int quantidadePaginas)
-    : super(titulo, autor) {
+  LivroFisico(super.titulo, super.autor, int quantidadePaginas) {
     this.quantidadePaginas = quantidadePaginas;
   }
 

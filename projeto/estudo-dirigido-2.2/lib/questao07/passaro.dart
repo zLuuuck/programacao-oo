@@ -1,7 +1,7 @@
 import 'animal.dart';
 
 class Passaro extends Animal {
-  Passaro(String nome) : super(nome);
+  Passaro(super.nome);
 
   @override
   void emitirSom() {

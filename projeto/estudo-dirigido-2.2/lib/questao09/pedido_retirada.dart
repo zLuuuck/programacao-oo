@@ -3,8 +3,7 @@ import 'pedido.dart';
 class PedidoRetirada extends Pedido {
   String _nomeCliente = 'Não informado';
 
-  PedidoRetirada(String codigo, double valorTotal, String nomeCliente)
-    : super(codigo, valorTotal) {
+  PedidoRetirada(super.codigo, super.valorTotal, String nomeCliente) {
     this.nomeCliente = nomeCliente;
   }
 

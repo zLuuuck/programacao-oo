@@ -4,8 +4,7 @@ import 'produto.dart';
 class ProdutoPerecivel extends Produto implements Exibivel {
   String _dataValidade = 'Não informada';
 
-  ProdutoPerecivel(String nome, double preco, String dataValidade)
-    : super(nome, preco) {
+  ProdutoPerecivel(super.nome, super.preco, String dataValidade) {
     this.dataValidade = dataValidade;
   }
 

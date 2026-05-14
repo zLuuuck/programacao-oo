@@ -4,8 +4,7 @@ import 'livro.dart';
 class LivroDigital extends Livro implements Informativo {
   double _tamanhoArquivo = 0;
 
-  LivroDigital(String titulo, String autor, double tamanhoArquivo)
-    : super(titulo, autor) {
+  LivroDigital(super.titulo, super.autor, double tamanhoArquivo) {
     this.tamanhoArquivo = tamanhoArquivo;
   }
 

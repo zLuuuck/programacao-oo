@@ -3,8 +3,7 @@ import 'pedido.dart';
 class PedidoDelivery extends Pedido {
   double taxa;
 
-  PedidoDelivery(String codigo, double valor, this.taxa)
-      : super(codigo, valor);
+  PedidoDelivery(super.codigo, super.valor, this.taxa);
 
   double total() {
     return valor + taxa;

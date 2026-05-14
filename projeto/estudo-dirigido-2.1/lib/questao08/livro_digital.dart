@@ -3,8 +3,7 @@ import 'livro.dart';
 class LivroDigital extends Livro {
   double tamanho;
 
-  LivroDigital(String titulo, String autor, this.tamanho)
-      : super(titulo, autor);
+  LivroDigital(super.titulo, super.autor, this.tamanho);
 
   @override
   void exibir() {

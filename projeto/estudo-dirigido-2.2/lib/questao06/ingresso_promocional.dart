@@ -4,8 +4,7 @@ import 'ingressos.dart';
 class IngressoPromocional extends Ingresso implements Calculavel {
   double _desconto = 0;
 
-  IngressoPromocional(String evento, double valor, double desconto)
-    : super(evento, valor) {
+  IngressoPromocional(super.evento, super.valor, double desconto) {
     this.desconto = desconto;
   }
 

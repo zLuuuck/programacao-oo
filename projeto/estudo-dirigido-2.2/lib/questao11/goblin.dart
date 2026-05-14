@@ -3,8 +3,7 @@ import 'inimigo.dart';
 class Goblin extends Inimigo {
   int _velocidade = 0;
 
-  Goblin(String nome, int vida, int nivel, int recompensa, int velocidade)
-    : super(nome, vida, nivel, recompensa) {
+  Goblin(super.nome, super.vida, super.nivel, super.recompensa, int velocidade) {
     this.velocidade = velocidade;
   }
 

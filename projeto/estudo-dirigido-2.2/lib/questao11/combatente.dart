@@ -4,8 +4,7 @@ import 'personagem.dart';
 abstract class Combatente extends Personagem implements Atacavel {
   int _forca = 0;
 
-  Combatente(String nome, int vida, int nivel, int forca)
-    : super(nome, vida, nivel) {
+  Combatente(super.nome, super.vida, super.nivel, int forca) {
     this.forca = forca;
   }
 

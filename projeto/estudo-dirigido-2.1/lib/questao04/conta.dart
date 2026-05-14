@@ -9,7 +9,7 @@ class ContaBancaria {
 
   set saldo(double valor) {
     if (valor >= 0) {
-      this._saldo = valor;
+      _saldo = valor;
     } else {
       print("O saldo não pode ser negativo. Mantido valor padrão de R\$ 0.");
       return;
@@ -18,7 +18,7 @@ class ContaBancaria {
 
   set titular(String nome) {
     if (nome.isNotEmpty) {
-      this._titular = nome;
+      _titular = nome;
     } else {
       print(
         "O nome do titular não pode ser vazio. Mantido valor padrão de 'Titular Desconhecido'.",
@@ -27,12 +27,12 @@ class ContaBancaria {
     }
   }
 
-  double get saldo => this._saldo;
-  String get titular => this._titular;
+  double get saldo => _saldo;
+  String get titular => _titular;
 
   void depositar(double valor) {
     if (valor > 0) {
-      this._saldo += valor;
+      _saldo += valor;
       print("Depósito de R\$ $valor realizado. Saldo atual: R\$ $_saldo");
     } else {
       print("O valor do depósito deve ser positivo.");
@@ -42,8 +42,8 @@ class ContaBancaria {
 
   void sacar(double valor) {
     if (valor > 0) {
-      if (valor <= this._saldo) {
-        this._saldo -= valor;
+      if (valor <= _saldo) {
+        _saldo -= valor;
         print("Saque de R\$ $valor realizado. Saldo atual: R\$ $_saldo");
       } else {
         print("Saldo insuficiente para o saque.");
@@ -62,15 +62,15 @@ class ContaBancaria {
 }
 
 class ContaPoupanca extends ContaBancaria {
-  double _taxaRendimento = 1.0; 
+  final double _taxaRendimento = 1.0; 
 
-  ContaPoupanca(String titular, double saldo) : super(titular, saldo);
+  ContaPoupanca(super.titular, super.saldo);
 
-  double get taxaRendimento => this._taxaRendimento;
+  double get taxaRendimento => _taxaRendimento;
 
   void aplicarRendimento() {
-    double rendimento = this.saldo * (_taxaRendimento / 100);
-    this.saldo = this.saldo + rendimento;
+    double rendimento = saldo * (_taxaRendimento / 100);
+    saldo = saldo + rendimento;
     print("Rendimento de $_taxaRendimento% aplicado. Saldo atual: R\$ $saldo");
   }
 
@@ -82,15 +82,15 @@ class ContaPoupanca extends ContaBancaria {
 }
 
 class ContaCorrente extends ContaBancaria {
-  double _taxaRendimento = 5.0; 
+  final double _taxaRendimento = 5.0; 
 
-  ContaCorrente(String titular, double saldo) : super(titular, saldo);
+  ContaCorrente(super.titular, super.saldo);
 
-  double get taxaRendimento => this._taxaRendimento;
+  double get taxaRendimento => _taxaRendimento;
 
   void aplicarRendimento() {
-    double rendimento = this.saldo * (_taxaRendimento / 100);
-    this.saldo = this.saldo + rendimento;
+    double rendimento = saldo * (_taxaRendimento / 100);
+    saldo = saldo + rendimento;
     print("Rendimento de $_taxaRendimento% aplicado. Saldo atual: R\$ $saldo");
   }
 

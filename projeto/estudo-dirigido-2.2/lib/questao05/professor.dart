@@ -4,8 +4,7 @@ class Professor extends Pessoa {
   String _disciplina = 'Não informada';
   double _salario = 0;
 
-  Professor(String nome, int idade, String disciplina, double salario)
-    : super(nome, idade) {
+  Professor(super.nome, super.idade, String disciplina, double salario) {
     this.disciplina = disciplina;
     this.salario = salario;
   }

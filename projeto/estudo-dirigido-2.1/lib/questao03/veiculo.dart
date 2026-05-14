@@ -50,8 +50,7 @@ class Veiculo {
 class Carro extends Veiculo {
   int _numeroPortas = 4;   //valor padrão de 4 portas
 
-  Carro(String marca, String modelo, int ano, int numeroPortas)
-      : super(marca, modelo, ano) {
+  Carro(super.marca, super.modelo, super.ano, int numeroPortas) {
     this.numeroPortas = numeroPortas;
   }
 

@@ -3,8 +3,7 @@ import 'dispositivo.dart';
 class Smartphone extends Dispositivo {
   String sistema;
 
-  Smartphone(String marca, String modelo, this.sistema)
-      : super(marca, modelo);
+  Smartphone(super.marca, super.modelo, this.sistema);
 
   @override
   void ligar() {

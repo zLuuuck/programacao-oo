@@ -3,7 +3,7 @@ import 'funcionario.dart';
 class Gerente extends Funcionario {
   String _setor = 'Não informado';
 
-  Gerente(String nome, double salario, String setor) : super(nome, salario) {
+  Gerente(super.nome, super.salario, String setor) {
     this.setor = setor;
   }
 

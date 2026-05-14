@@ -4,8 +4,7 @@ class Aluno extends Pessoa {
   String _matricula = 'Não informada';
   String _curso = 'Não informado';
 
-  Aluno(String nome, int idade, String matricula, String curso)
-    : super(nome, idade) {
+  Aluno(super.nome, super.idade, String matricula, String curso) {
     this.matricula = matricula;
     this.curso = curso;
   }

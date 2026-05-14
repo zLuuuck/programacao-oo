@@ -4,8 +4,7 @@ import 'personagem.dart';
 class Guerreiro extends Combatente {
   int _armadura = 0;
 
-  Guerreiro(String nome, int vida, int nivel, int forca, int armadura)
-    : super(nome, vida, nivel, forca) {
+  Guerreiro(super.nome, super.vida, super.nivel, super.forca, int armadura) {
     this.armadura = armadura;
   }
 

@@ -3,8 +3,7 @@ import 'personagem.dart';
 abstract class Inimigo extends Personagem {
   int _recompensa = 0;
 
-  Inimigo(String nome, int vida, int nivel, int recompensa)
-    : super(nome, vida, nivel) {
+  Inimigo(super.nome, super.vida, super.nivel, int recompensa) {
     this.recompensa = recompensa;
   }
 

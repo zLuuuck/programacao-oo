@@ -1,7 +1,7 @@
 import 'funcionario.dart';
 
 class FuncionarioComum extends Funcionario {
-  FuncionarioComum(String nome, double salario) : super(nome, salario);
+  FuncionarioComum(super.nome, super.salario);
 
   @override
   void exibirDados() {

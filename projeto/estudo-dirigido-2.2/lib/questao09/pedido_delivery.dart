@@ -5,11 +5,11 @@ class PedidoDelivery extends Pedido {
   double _taxaEntrega = 0;
 
   PedidoDelivery(
-    String codigo,
-    double valorTotal,
+    super.codigo,
+    super.valorTotal,
     String enderecoEntrega,
     double taxaEntrega,
-  ) : super(codigo, valorTotal) {
+  ) {
     this.enderecoEntrega = enderecoEntrega;
     this.taxaEntrega = taxaEntrega;
   }

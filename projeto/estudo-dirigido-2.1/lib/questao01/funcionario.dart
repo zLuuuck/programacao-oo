@@ -37,7 +37,7 @@ class Funcionario {
 class Gerente extends Funcionario {
   String _setor = 'Não definido';
 
-  Gerente(String nome, double salario, String setor) : super(nome, salario) {
+  Gerente(super.nome, super.salario, String setor) {
     this.setor = setor;
   }
 

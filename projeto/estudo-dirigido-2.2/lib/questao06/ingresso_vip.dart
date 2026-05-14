@@ -4,8 +4,7 @@ import 'ingressos.dart';
 class IngressoVip extends Ingresso implements Calculavel {
   double _valorAdicional = 0;
 
-  IngressoVip(String evento, double valor, double valorAdicional)
-    : super(evento, valor) {
+  IngressoVip(super.evento, super.valor, double valorAdicional) {
     this.valorAdicional = valorAdicional;
   }
 

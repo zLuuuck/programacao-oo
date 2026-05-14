@@ -5,8 +5,7 @@ class Inimigo extends Personagem {
   int _recompensaXP = 0;
   int _recompensaOuro = 0;
 
-  Inimigo(String nome, int hp, int level, int recompensaXP, int recompensaOuro, int dmg)
-    : super(nome, hp, level) {
+  Inimigo(super.nome, super.hp, super.level, int recompensaXP, int recompensaOuro, int dmg) {
     this.recompensaXP = recompensaXP;
     this.recompensaOuro = recompensaOuro;
     this.dmg = dmg;
@@ -58,8 +57,7 @@ class Inimigo extends Personagem {
 class Goblin extends Inimigo {
   int _spd = 0; 
 
-  Goblin(String nome, int hp, int level, int recompensaXP, int recompensaOuro, int dmg, int spd)
-      : super(nome, hp, level, recompensaXP, recompensaOuro, dmg) {
+  Goblin(super.nome, super.hp, super.level, super.recompensaXP, super.recompensaOuro, super.dmg, int spd) {
     this.spd = spd;
   }
 
@@ -84,8 +82,7 @@ class Goblin extends Inimigo {
 class Dragao extends Inimigo {
   int _firePower = 10;  
 
-  Dragao(String nome, int hp, int level, int recompensaXP, int recompensaOuro, int dmg, int firePower)
-      : super(nome, hp, level, recompensaXP, recompensaOuro, dmg) {
+  Dragao(super.nome, super.hp, super.level, super.recompensaXP, super.recompensaOuro, super.dmg, int firePower) {
     this.firePower = firePower;
   }
 

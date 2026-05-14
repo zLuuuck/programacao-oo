@@ -3,8 +3,7 @@ import 'personagem.dart';
 class Combatente extends Personagem {
   int _dmg = 1; 
 
-  Combatente(String nome, int hp, int level, int dmg)
-      : super(nome, hp, level) {
+  Combatente(super.nome, super.hp, super.level, int dmg) {
     this.dmg = dmg;  
   }
 
@@ -33,8 +32,7 @@ class Combatente extends Personagem {
 class Guerreiro extends Combatente {
   int _armorlvl = 0;
 
-  Guerreiro(String nome, int hp, int level, int dmg, int armorlvl)
-      : super(nome, hp, level, dmg) {
+  Guerreiro(super.nome, super.hp, super.level, super.dmg, int armorlvl) {
     this.armorlvl = armorlvl;
   }
 
@@ -66,8 +64,7 @@ class Guerreiro extends Combatente {
 class Arqueiro extends Combatente {
   int _flechas = 64; //um pack de flecha kkkk  
 
-  Arqueiro(String nome, int hp, int level, int dmg, int flechas)
-      : super(nome, hp, level, dmg) {
+  Arqueiro(super.nome, super.hp, super.level, super.dmg, int flechas) {
     this.flechas = flechas;
   }
 
@@ -103,8 +100,7 @@ class Arqueiro extends Combatente {
 class Mago extends Combatente {
   int _mana = 50;
 
-  Mago(String nome, int hp, int level, int dmg, int mana)
-      : super(nome, hp, level, dmg) {
+  Mago(super.nome, super.hp, super.level, super.dmg, int mana) {
     this.mana = mana;
   }
 

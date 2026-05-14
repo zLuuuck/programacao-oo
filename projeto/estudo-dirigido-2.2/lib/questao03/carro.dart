@@ -3,8 +3,7 @@ import 'veiculo.dart';
 class Carro extends Veiculo {
   int _quantidadePortas = 2;
 
-  Carro(String marca, String modelo, int ano, int quantidadePortas)
-    : super(marca, modelo, ano) {
+  Carro(super.marca, super.modelo, super.ano, int quantidadePortas) {
     this.quantidadePortas = quantidadePortas;
   }
 

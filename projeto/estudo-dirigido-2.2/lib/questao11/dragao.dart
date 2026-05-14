@@ -5,8 +5,7 @@ import 'personagem.dart';
 class Dragao extends Inimigo implements Flamejante {
   int _poderDeFogo = 10;
 
-  Dragao(String nome, int vida, int nivel, int recompensa, int poderDeFogo)
-    : super(nome, vida, nivel, recompensa) {
+  Dragao(super.nome, super.vida, super.nivel, super.recompensa, int poderDeFogo) {
     this.poderDeFogo = poderDeFogo;
   }
 

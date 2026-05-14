@@ -4,8 +4,7 @@ import 'ligavel.dart';
 class Smartphone extends Dispositivo implements Ligavel {
   String _sistemaOperacional = 'Não informado';
 
-  Smartphone(String marca, String modelo, String sistemaOperacional)
-    : super(marca, modelo) {
+  Smartphone(super.marca, super.modelo, String sistemaOperacional) {
     this.sistemaOperacional = sistemaOperacional;
   }
 
