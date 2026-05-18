@@ -12,12 +12,9 @@ class Smartphone extends Dispositivo implements Ligavel {
 
   set sistemaOperacional(String sistemaOperacional) {
     if (sistemaOperacional.trim().isEmpty) {
-      print(
-        'Sistema operacional não pode ser vazio. Mantido: $_sistemaOperacional',
-      );
+      print('Sistema operacional não pode ser vazio. Mantido: $_sistemaOperacional');
       return;
     }
-
     _sistemaOperacional = sistemaOperacional;
   }
 
@@ -29,5 +26,10 @@ class Smartphone extends Dispositivo implements Ligavel {
   @override
   void desligar() {
     print('Smartphone $marca $modelo desligando.');
+  }
+
+  @override
+  String toString() {
+    return 'Smartphone | Marca: $marca | Modelo: $modelo | SO: $sistemaOperacional';
   }
 }

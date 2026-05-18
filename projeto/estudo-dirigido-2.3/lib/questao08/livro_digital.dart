@@ -12,20 +12,19 @@ class LivroDigital extends Livro implements Informativo {
 
   set tamanhoArquivo(double tamanhoArquivo) {
     if (tamanhoArquivo < 0) {
-      print(
-        'Tamanho do arquivo não pode ser negativo. Mantido: $_tamanhoArquivo MB',
-      );
+      print('Tamanho do arquivo não pode ser negativo. Mantido: $_tamanhoArquivo MB');
       return;
     }
-
     _tamanhoArquivo = tamanhoArquivo;
   }
 
   @override
   void exibirInformacoes() {
-    print('Livro digital');
-    print('Título: $titulo');
-    print('Autor: $autor');
-    print('Tamanho do arquivo: $tamanhoArquivo MB');
+    print('Livro Digital | Título: $titulo | Autor: $autor | Tamanho: ${tamanhoArquivo.toStringAsFixed(0)} MB');
+  }
+
+  @override
+  String toString() {
+    return 'Livro Digital | Título: $titulo | Autor: $autor | Tamanho: ${tamanhoArquivo.toStringAsFixed(0)} MB';
   }
 }

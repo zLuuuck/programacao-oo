@@ -15,7 +15,6 @@ class Notebook extends Dispositivo implements Ligavel {
       print('Memória RAM deve ser positiva. Mantida: $_memoriaRam GB');
       return;
     }
-
     _memoriaRam = memoriaRam;
   }
 
@@ -27,5 +26,10 @@ class Notebook extends Dispositivo implements Ligavel {
   @override
   void desligar() {
     print('Notebook $marca $modelo desligando.');
+  }
+
+  @override
+  String toString() {
+    return 'Notebook | Marca: $marca | Modelo: $modelo | RAM: $memoriaRam GB';
   }
 }

@@ -14,15 +14,19 @@ class PedidoRetirada extends Pedido {
       print('Nome do cliente não pode ser vazio. Mantido: $_nomeCliente');
       return;
     }
-
     _nomeCliente = nomeCliente;
   }
 
   @override
+  double valorFinal() => valorTotal;
+
+  @override
   void exibirPedido() {
-    print('Pedido retirada');
-    print('Código: $codigo');
-    print('Valor total: R\$ $valorTotal');
-    print('Nome do cliente: $nomeCliente');
+    print('Pedido Retirada | Código: $codigo | Valor: R\$ ${valorTotal.toStringAsFixed(2)} | Cliente: $nomeCliente | Total: R\$ ${valorFinal().toStringAsFixed(2)}');
+  }
+
+  @override
+  String toString() {
+    return 'Pedido Retirada | Código: $codigo | Valor: R\$ ${valorTotal.toStringAsFixed(2)} | Cliente: $nomeCliente | Total: R\$ ${valorFinal().toStringAsFixed(2)}';
   }
 }

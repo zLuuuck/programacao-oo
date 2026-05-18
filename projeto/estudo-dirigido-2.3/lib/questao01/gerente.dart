@@ -19,10 +19,10 @@ class Gerente extends Funcionario {
   }
 
   @override
-  void exibirDados() {
-    print('Gerente');
-    print('Nome: $nome');
-    print('Salário: R\$ $salario');
-    print('Setor: $setor');
+  double calcularBonus() => salario * 0.15;
+
+  @override
+  String toString() {
+    return 'Gerente | Nome: $nome | Salário: R\$ ${salario.toStringAsFixed(2)} | Setor: $setor | Bônus: R\$ ${calcularBonus().toStringAsFixed(2)}';
   }
 }

@@ -15,15 +15,16 @@ class ProdutoPerecivel extends Produto implements Exibivel {
       print('Data de validade não pode ser vazia. Mantida: $_dataValidade');
       return;
     }
-
     _dataValidade = dataValidade;
   }
 
   @override
   void exibir() {
-    print('Produto perecível');
-    print('Nome: $nome');
-    print('Preço: R\$ $preco');
-    print('Data de validade: $dataValidade');
+    print('Produto Perecível | Nome: $nome | Preço: R\$ ${preco.toStringAsFixed(2)} | Validade: $dataValidade');
+  }
+
+  @override
+  String toString() {
+    return 'Produto Perecível | Nome: $nome | Preço: R\$ ${preco.toStringAsFixed(2)} | Validade: $dataValidade';
   }
 }

@@ -1,4 +1,6 @@
-abstract class Funcionario {
+import 'bonificavel.dart';
+
+abstract class Funcionario implements Bonificavel {
   String _nome = 'Não informado';
   double _salario = 0;
 
@@ -11,10 +13,9 @@ abstract class Funcionario {
 
   set nome(String nome) {
     if (nome.trim().isEmpty) {
-      print('Nome do funcionário não pode ser vazio. Mantido: $_nome');
+      print('Nome não pode ser vazio. Mantido: $_nome');
       return;
     }
-
     _nome = nome;
   }
 
@@ -25,9 +26,14 @@ abstract class Funcionario {
       print('Salário não pode ser negativo. Mantido: R\$ $_salario');
       return;
     }
-
     _salario = salario;
   }
 
-  void exibirDados();
+  @override
+  double calcularBonus();
+
+  @override
+  String toString() {
+    return 'Funcionario - nome: $nome | salário: R\$ ${salario.toStringAsFixed(2)}';
+  }
 }

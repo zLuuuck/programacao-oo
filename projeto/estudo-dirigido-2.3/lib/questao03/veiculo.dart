@@ -1,4 +1,6 @@
-abstract class Veiculo {
+import 'fichavel.dart';
+
+abstract class Veiculo implements Fichavel {
   String _marca = 'Não informada';
   String _modelo = 'Não informado';
   int _ano = 1;
@@ -16,7 +18,6 @@ abstract class Veiculo {
       print('Marca não pode ser vazia. Mantida: $_marca');
       return;
     }
-
     _marca = marca;
   }
 
@@ -27,7 +28,6 @@ abstract class Veiculo {
       print('Modelo não pode ser vazio. Mantido: $_modelo');
       return;
     }
-
     _modelo = modelo;
   }
 
@@ -38,9 +38,9 @@ abstract class Veiculo {
       print('Ano deve ser positivo. Mantido: $_ano');
       return;
     }
-
     _ano = ano;
   }
 
+  @override
   void exibirFicha();
 }

@@ -16,7 +16,6 @@ class Aluno extends Pessoa {
       print('Matrícula não pode ser vazia. Mantida: $_matricula');
       return;
     }
-
     _matricula = matricula;
   }
 
@@ -27,16 +26,16 @@ class Aluno extends Pessoa {
       print('Curso não pode ser vazio. Mantido: $_curso');
       return;
     }
-
     _curso = curso;
   }
 
   @override
   void exibirDados() {
-    print('Aluno');
-    print('Nome: $nome');
-    print('Idade: $idade');
-    print('Matrícula: $matricula');
-    print('Curso: $curso');
+    print('Aluno | Nome: $nome | Idade: $idade | Matrícula: $matricula | Curso: $curso');
+  }
+
+  @override
+  String toString() {
+    return 'Aluno | Nome: $nome | Idade: $idade | Matrícula: $matricula | Curso: $curso';
   }
 }

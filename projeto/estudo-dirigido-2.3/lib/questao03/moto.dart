@@ -14,16 +14,16 @@ class Moto extends Veiculo {
       print('Cilindradas deve ser positivo. Mantido: $_cilindradas');
       return;
     }
-
     _cilindradas = cilindradas;
   }
 
   @override
   void exibirFicha() {
-    print('Moto');
-    print('Marca: $marca');
-    print('Modelo: $modelo');
-    print('Ano: $ano');
-    print('Cilindradas: $cilindradas');
+    print('Moto | Marca: $marca | Modelo: $modelo | Ano: $ano | Cilindradas: $cilindradas');
+  }
+
+  @override
+  String toString() {
+    return 'Moto | Marca: $marca | Modelo: $modelo | Ano: $ano | Cilindradas: $cilindradas';
   }
 }

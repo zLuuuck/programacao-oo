@@ -16,7 +16,6 @@ class Professor extends Pessoa {
       print('Disciplina não pode ser vazia. Mantida: $_disciplina');
       return;
     }
-
     _disciplina = disciplina;
   }
 
@@ -27,16 +26,16 @@ class Professor extends Pessoa {
       print('Salário não pode ser negativo. Mantido: R\$ $_salario');
       return;
     }
-
     _salario = salario;
   }
 
   @override
   void exibirDados() {
-    print('Professor');
-    print('Nome: $nome');
-    print('Idade: $idade');
-    print('Disciplina: $disciplina');
-    print('Salário: R\$ $salario');
+    print('Professor | Nome: $nome | Idade: $idade | Disciplina: $disciplina | Salário: R\$ ${salario.toStringAsFixed(2)}');
+  }
+
+  @override
+  String toString() {
+    return 'Professor | Nome: $nome | Idade: $idade | Disciplina: $disciplina | Salário: R\$ ${salario.toStringAsFixed(2)}';
   }
 }

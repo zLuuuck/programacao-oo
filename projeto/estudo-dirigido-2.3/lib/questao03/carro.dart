@@ -11,21 +11,19 @@ class Carro extends Veiculo {
 
   set quantidadePortas(int quantidadePortas) {
     if (quantidadePortas <= 0) {
-      print(
-        'Quantidade de portas deve ser positiva. Mantida: $_quantidadePortas',
-      );
+      print('Quantidade de portas deve ser positiva. Mantida: $_quantidadePortas');
       return;
     }
-
     _quantidadePortas = quantidadePortas;
   }
 
   @override
   void exibirFicha() {
-    print('Carro');
-    print('Marca: $marca');
-    print('Modelo: $modelo');
-    print('Ano: $ano');
-    print('Quantidade de portas: $quantidadePortas');
+    print('Carro | Marca: $marca | Modelo: $modelo | Ano: $ano | Portas: $quantidadePortas');
+  }
+
+  @override
+  String toString() {
+    return 'Carro | Marca: $marca | Modelo: $modelo | Ano: $ano | Portas: $quantidadePortas';
   }
 }

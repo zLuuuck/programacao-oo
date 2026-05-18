@@ -12,20 +12,19 @@ class LivroFisico extends Livro implements Informativo {
 
   set quantidadePaginas(int quantidadePaginas) {
     if (quantidadePaginas <= 0) {
-      print(
-        'Quantidade de páginas deve ser positiva. Mantida: $_quantidadePaginas',
-      );
+      print('Quantidade de páginas deve ser positiva. Mantida: $_quantidadePaginas');
       return;
     }
-
     _quantidadePaginas = quantidadePaginas;
   }
 
   @override
   void exibirInformacoes() {
-    print('Livro físico');
-    print('Título: $titulo');
-    print('Autor: $autor');
-    print('Quantidade de páginas: $quantidadePaginas');
+    print('Livro Físico | Título: $titulo | Autor: $autor | Páginas: $quantidadePaginas');
+  }
+
+  @override
+  String toString() {
+    return 'Livro Físico | Título: $titulo | Autor: $autor | Páginas: $quantidadePaginas';
   }
 }

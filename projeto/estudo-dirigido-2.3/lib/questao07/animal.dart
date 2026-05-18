@@ -1,4 +1,6 @@
-abstract class Animal {
+import 'sonoro.dart';
+
+abstract class Animal implements Sonoro {
   String _nome = 'Não informado';
 
   Animal(String nome) {
@@ -12,9 +14,14 @@ abstract class Animal {
       print('Nome do animal não pode ser vazio. Mantido: $_nome');
       return;
     }
-
     _nome = nome;
   }
 
+  @override
   void emitirSom();
+
+  @override
+  String toString() {
+    return 'Animal - nome: $nome | tipo: $runtimeType';
+  }
 }

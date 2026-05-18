@@ -43,15 +43,16 @@ abstract class Personagem {
       return;
     }
     _vida -= dano;
-    if (_vida < 0) {
-      _vida = 0;
-    }
+    if (_vida < 0) _vida = 0;
     print('$nome recebeu $dano de dano. Vida atual: $_vida');
   }
 
-  bool estaVivo() {
-    return _vida > 0;
-  }
+  bool estaVivo() => _vida > 0;
 
   void exibirStatus();
+
+  @override
+  String toString() {
+    return 'Personagem - nome: $nome | vida: $vida | nível: $nivel | tipo: $runtimeType';
+  }
 }

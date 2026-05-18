@@ -4,12 +4,7 @@ class PedidoDelivery extends Pedido {
   String _enderecoEntrega = 'Não informado';
   double _taxaEntrega = 0;
 
-  PedidoDelivery(
-    super.codigo,
-    super.valorTotal,
-    String enderecoEntrega,
-    double taxaEntrega,
-  ) {
+  PedidoDelivery(super.codigo, super.valorTotal, String enderecoEntrega, double taxaEntrega) {
     this.enderecoEntrega = enderecoEntrega;
     this.taxaEntrega = taxaEntrega;
   }
@@ -18,12 +13,9 @@ class PedidoDelivery extends Pedido {
 
   set enderecoEntrega(String enderecoEntrega) {
     if (enderecoEntrega.trim().isEmpty) {
-      print(
-        'Endereço de entrega não pode ser vazio. Mantido: $_enderecoEntrega',
-      );
+      print('Endereço de entrega não pode ser vazio. Mantido: $_enderecoEntrega');
       return;
     }
-
     _enderecoEntrega = enderecoEntrega;
   }
 
@@ -31,22 +23,22 @@ class PedidoDelivery extends Pedido {
 
   set taxaEntrega(double taxaEntrega) {
     if (taxaEntrega < 0) {
-      print(
-        'Taxa de entrega não pode ser negativa. Mantida: R\$ $_taxaEntrega',
-      );
+      print('Taxa de entrega não pode ser negativa. Mantida: R\$ $_taxaEntrega');
       return;
     }
-
     _taxaEntrega = taxaEntrega;
   }
 
   @override
+  double valorFinal() => valorTotal + taxaEntrega;
+
+  @override
   void exibirPedido() {
-    print('Pedido delivery');
-    print('Código: $codigo');
-    print('Valor total: R\$ $valorTotal');
-    print('Endereço de entrega: $enderecoEntrega');
-    print('Taxa de entrega: R\$ $taxaEntrega');
-    print('Valor final: R\$ ${valorTotal + taxaEntrega}');
+    print('Pedido Delivery | Código: $codigo | Valor: R\$ ${valorTotal.toStringAsFixed(2)} | Endereço: $enderecoEntrega | Taxa: R\$ ${taxaEntrega.toStringAsFixed(2)} | Total: R\$ ${valorFinal().toStringAsFixed(2)}');
+  }
+
+  @override
+  String toString() {
+    return 'Pedido Delivery | Código: $codigo | Valor: R\$ ${valorTotal.toStringAsFixed(2)} | Endereço: $enderecoEntrega | Taxa: R\$ ${taxaEntrega.toStringAsFixed(2)} | Total: R\$ ${valorFinal().toStringAsFixed(2)}';
   }
 }

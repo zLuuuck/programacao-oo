@@ -1,4 +1,6 @@
-abstract class Pessoa {
+import 'apresentavel.dart';
+
+abstract class Pessoa implements Apresentavel {
   String _nome = 'Não informado';
   int _idade = 0;
 
@@ -14,7 +16,6 @@ abstract class Pessoa {
       print('Nome não pode ser vazio. Mantido: $_nome');
       return;
     }
-
     _nome = nome;
   }
 
@@ -25,9 +26,9 @@ abstract class Pessoa {
       print('Idade não pode ser negativa. Mantida: $_idade');
       return;
     }
-
     _idade = idade;
   }
 
+  @override
   void exibirDados();
 }

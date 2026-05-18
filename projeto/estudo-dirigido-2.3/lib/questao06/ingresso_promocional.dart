@@ -30,6 +30,6 @@ class IngressoPromocional extends Ingresso implements Calculavel {
 
   @override
   String toString() {
-    return 'Evento: $evento | Tipo: Promocional | ';
+    return 'Ingresso Promocional | Evento: $evento | Valor: R\$ ${valor.toStringAsFixed(2)} | Desconto: R\$ ${desconto.toStringAsFixed(2)} | Valor final: R\$ ${valorFinal().toStringAsFixed(2)}';
   }
 }

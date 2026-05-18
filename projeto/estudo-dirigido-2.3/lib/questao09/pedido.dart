@@ -1,4 +1,6 @@
-abstract class Pedido {
+import 'processavel.dart';
+
+abstract class Pedido implements Processavel {
   String _codigo = 'Sem código';
   double _valorTotal = 0;
 
@@ -14,7 +16,6 @@ abstract class Pedido {
       print('Código não pode ser vazio. Mantido: $_codigo');
       return;
     }
-
     _codigo = codigo;
   }
 
@@ -25,9 +26,12 @@ abstract class Pedido {
       print('Valor total não pode ser negativo. Mantido: R\$ $_valorTotal');
       return;
     }
-
     _valorTotal = valorTotal;
   }
 
+  @override
+  double valorFinal();
+
+  @override
   void exibirPedido();
 }

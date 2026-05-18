@@ -1,12 +1,23 @@
+import '../lista_generica.dart';
+import 'caminhao.dart';
 import 'carro.dart';
 import 'moto.dart';
 import 'veiculo.dart';
 
 void main() {
-  Veiculo carro = Carro('Koenigsegg', 'Agera R', 2021, 2);
-  Veiculo moto = Moto('Honda', 'CB 500F', 2024, 500);
+  ListaGenerica<Veiculo> veiculos = ListaGenerica<Veiculo>();
 
-  carro.exibirFicha();
-  print('');
-  moto.exibirFicha();
+  veiculos.adicionar(Carro('Toyota', 'Corolla', 2022, 4));
+  veiculos.adicionar(Carro('Honda', 'Civic', 2021, 4));
+  veiculos.adicionar(Moto('Yamaha', 'Fazer', 2023, 250));
+  veiculos.adicionar(Moto('Honda', 'Biz', 2020, 125));
+  veiculos.adicionar(Caminhao('Volvo', 'VM', 2019, 12));
+
+  print('--- Impressão dos veículos ---');
+  veiculos.imprimirItens();
+
+  print('\n--- Fichas dos veículos ---');
+  for (var veiculo in veiculos.obterItens()) {
+    veiculo.exibirFicha();
+  }
 }
