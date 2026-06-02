@@ -1,0 +1,25 @@
+Resumo didático do padrão MVC usado neste projeto
+
+MVC significa Model, View e Controller.
+
+1. Model
+Responsável por representar os dados da aplicação.
+Neste projeto, o arquivo contato/model/contato.dart define a classe Contato.
+
+2. View
+Responsável por conversar com o usuário.
+Neste projeto, o arquivo contato/view/contato_view.dart mostra o menu, lê dados do teclado e exibe mensagens.
+
+3. Controller
+Responsável por controlar o fluxo da aplicação.
+Neste projeto, o arquivo contato/controller/contato_controller.dart interpreta as opções do menu e decide quando cadastrar, listar, atualizar ou deletar contatos.
+
+Fluxo básico:
+main.dart cria o ContatoController.
+ContatoController chama a View para exibir o menu.
+View lê a opção digitada pelo usuário.
+Controller executa a ação escolhida.
+Model representa os dados usados pelo sistema.
+
+Observação:
+A lista de contatos fica apenas na memória. Ao fechar o programa, os dados cadastrados são perdidos.
